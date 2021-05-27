@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleForm.css">
+    <title>Registrar</title>
+</head>
+<body>
+    <form class="formularioCam">
+        <p class="title">Registro</p>
+        <p class="subtitle">Datos Personales</p>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cname">Nombre</label>
+            <br>
+            <label class="error" id="errNom"></label>
+            <div class="campo">
+                <i class="fas fa-user icon"></i><input type="text" id="Cname" name="nombeUsu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cappat">Apellido Paterno</label>
+            <br>
+            <label class="error" id="errAppat"></label>
+            <div class="campo">
+                <i class="fas fa-user icon"></i><input type="text" id="Cappat" name="appatUsu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Capmat">Apellido Materno</label>
+            <br>
+            <label class="error" id="errApmat"></label>
+            <div class="campo">
+                <i class="fas fa-user icon"></i><input type="text" id="Capmat" name="apmatUsu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cfn">Fecha de Nacimiento</label>
+            <br>
+            <label class="error" id="errFN"></label>
+            <div class="campo">
+                <i class="fas fa-calendar-day icon"></i><input type="date" id="Cfn" name="fnUsu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Ctel">Telefono</label>
+            <br>
+            <label class="error" id="errTel"></label>
+            <div class="campo">
+                <i class="fas fa-phone icon"></i><input type="text" id="Ctel" name="telUsu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Ccel">Celular</label>
+            <br>
+            <label class="error" id="errCel"></label>
+            <div class="campo">
+                <i class="fas fa-mobile-alt icon"></i><input type="text" id="Ccel" name="celUsu" class="text-campo">
+            </div>
+        </div>
+        <p class="subtitle">Datos Usuario</p>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cusu">Usuario</label>
+            <br>
+            <label class="error" id="errUsu"></label>
+            <div class="campo">
+                <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cpass">Contraseña</label>
+            <br>
+            <label class="error" id="errPass"></label>
+            <div class="campo">
+                <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cpass2">Confirmar Contraseña</label>
+            <br>
+            <label class="error" id="errPass2"></label>
+            <div class="campo">
+                <i class="fas fa-lock icon"></i><input type="password" id="Cpass2" name="pass2" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <p class="extraLink">¿Ya tienes cuenta? <a class="linkE" href="inicioSesion.html">Inicia Sesion</a></p>
+            <input type="submit" class="subir" value="Registrarse">
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleForm.css">
+    <title>Iniciar Sesion</title>
+</head>
+<body>
+    <form class="formularioCam">
+        <p class="title">Inicio Sesion</p>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cusu">Usuario</label>
+            <br>
+            <label class="error" id="errUsu"></label>
+            <div class="campo">
+                <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <label class="nombre-campo" for="Cpass">Contraseña</label>
+            <br>
+            <label class="error" id="errPass"></label>
+            <div class="campo">
+                <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" class="text-campo">
+            </div>
+        </div>
+        <div class="container-campo">
+            <p class="extraLink">¿No tienes cuenta? <a class="linkE" href="registro.html">Registrate</a></p>
+            <input type="submit" class="subir" value="Iniciar Sesion">
+        </div>
+    </form>
+</body>
+</html>
