@@ -29,7 +29,7 @@ nav{
 }
 form {
     font-family: 'Lobster', cursive;
-    background: rgba(75, 124, 170, 0.4);
+    background: rgba(113, 105, 223, 0.555);
     width: 450px;
     margin: auto;
     padding: 10px 20px;
@@ -262,13 +262,25 @@ i{
     text-align: center;
     justify-content: center;
 }
+#boton{
+    border-radius: 10px ;
+    background-color: rgb(78, 73, 139);
+    border: 3px solid rgb(78, 73, 139);
+    color: white;
+}
+#boton:hover{
+    border: 3px solid rgb(113, 105, 223);
+    background: rgb(113, 105, 223);
+    cursor: pointer;
+    animation: shadow-pulse 1000ms 1;
+}
 .bussines{
     text-align: center;
 }
 footer{
     margin-top: 50px;
     padding: 10px;
-    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(138, 138, 138));
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgb(53, 38, 18));
 }
 img{
     border-radius: 10px;
@@ -443,5 +455,10 @@ img{
   
     .nav-toggle:focus:not(:focus-visible) {
       outline: none;
+    }
+}
+@media (max-width: 480px) {
+    form {
+        width: 100%;
     }
 }
