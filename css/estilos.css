@@ -1,0 +1,37 @@
+@font-face {
+    font-family: 'happy';
+    src: url(../fonts/Lf.otf);
+}
+#full{
+    font-family: 'happy';
+    font-size: 33.3px;
+}
+#tre{
+    font-family: 'happy';
+    font-size: 20px;
+    text-align: center;
+}
+#hip{
+    font-family: 'happy';
+    font-size: 86px;
+    text-align: center;
+}
+#burn{
+    font-family: 'happy';
+    font-size: 64px;
+}
+#con{
+    font-family: 'happy';
+    font-size: 48px;
+}
+#dis{
+    text-align: center;
+    font-family: 'happy';
+    font-size: 30px;
+    color: white;
+}
+#campo{
+    font-family: 'Lobster', cursive;
+    font-size: 14px;
+    color: black;
+}
