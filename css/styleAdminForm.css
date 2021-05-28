@@ -7,3 +7,118 @@
 body{
     background-image: url(https://static.vecteezy.com/system/resources/previews/000/333/037/non_2x/hand-drawn-ice-cream-seamless-pattern-vector.jpg);
 }
+
+.formularioProductos{
+    width: 90%;
+    margin: 30px auto;
+    max-width: 700px;
+    background-color: rgb(119, 96, 67);
+    border-radius: 5px;
+}
+
+.title{
+    font-size: 1.8rem;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .5rem 0;
+    color:black;
+    font-weight: bold;
+    background-color: antiquewhite;
+}
+
+.yes-combobox{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.non-combobox{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+.container-campo{
+    display: flex;
+    padding: 1.2rem;
+}
+
+.nombre-campo{
+    font-size: 1.3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: aliceblue;
+}
+
+.icon{
+    font-size: 1.3rem;
+    color: aliceblue;
+
+}
+
+.combobox{
+    font-size: 1rem;
+    padding: .3rem;
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 1px solid aliceblue;
+    background-color: rgba(240, 248, 255, 0);
+    color: aliceblue;
+    outline: none;
+}
+
+.combobox:focus{
+    background-color: rgb(146, 116, 78);
+}
+
+.text-campo{
+    font-size: 1rem;
+    padding: .3rem;
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 1px solid aliceblue;
+    background-color: rgba(240, 248, 255, 0);
+    color: aliceblue;
+    outline: none;
+    width: 6rem;
+}
+
+.text-campo:focus{
+    background-color: rgb(146, 116, 78);
+}
+
+.container-boton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.boton{
+    margin: .5rem 0 .3rem;
+    padding: .5rem;
+    background-color: antiquewhite;
+    border-radius: 5px;
+    width: 10rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.boton:hover{
+    background-color: rgb(236, 210, 176);
+}
+
+.return{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: .7rem;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.return:hover{
+    color: rgb(236, 210, 176);
+}
