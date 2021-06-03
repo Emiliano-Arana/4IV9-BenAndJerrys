@@ -132,6 +132,51 @@ function validarDatos(){
         verif = false;
     }
 
+    for(var i=0;i<nom.length;i++){
+        if(patNom.test(nom[i])){
+
+        }else{
+            document.getElementById('errNom').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
+    for(var i=0;i<appat.length;i++){
+        if(patNom.test(appat[i])){
+
+        }else{
+            document.getElementById('errAppat').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
+    for(var i=0;i<apmat.length;i++){
+        if(patNom.test(apmat[i])){
+
+        }else{
+            document.getElementById('errApmat').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
+    for(var i=0;i<tel.length;i++){
+        if(patNum.test(tel[i])){
+
+        }else{
+            document.getElementById('errTel').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
+    for(var i=0;i<cel.length;i++){
+        if(patNum.test(cel[i])){
+
+        }else{
+            document.getElementById('errCel').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
     for(var i=0;i<usu.length;i++){
         if(patUsu.test(usu[i])){
 
@@ -146,6 +191,15 @@ function validarDatos(){
 
         }else{
             document.getElementById('errPass').innerHTML= "*Ingreso algun caracter invalido";
+            verif = false;
+        }
+    }
+
+    for(var i=0;i<contra2.length;i++){
+        if(patPass.test(contra2[i])){
+
+        }else{
+            document.getElementById('errPass2').innerHTML= "*Ingreso algun caracter invalido";
             verif = false;
         }
     }
