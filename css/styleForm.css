@@ -8,6 +8,10 @@ body{
     background-image: url(https://media.istockphoto.com/vectors/isolated-seamless-ice-cream-with-chocolate-glaze-and-waffle-cone-vector-id1255995707?b=1&k=6&m=1255995707&s=170667a&w=0&h=cefsfqfKd86Rkj5BNYTeremdF4xPXJGyt0OeAIkWLjU=);
 }
 
+.body-container{
+    padding-top: 60px;
+}
+
 .formularioCam{
     width: 90%;
     max-width: 500px;
