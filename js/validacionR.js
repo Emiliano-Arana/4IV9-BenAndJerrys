@@ -27,8 +27,15 @@ function validarNum(e){
 }
 
 function validarDatos(){
+    document.getElementById('errNom').innerHTML = '';
+    document.getElementById('errAppat').innerHTML = '';
+    document.getElementById('errApmat').innerHTML = '';
+    document.getElementById('errFN').innerHTML = '';
+    document.getElementById('errTel').innerHTML = '';
+    document.getElementById('errCel').innerHTML = '';
     document.getElementById('errUsu').innerHTML = '';
     document.getElementById('errPass').innerHTML = '';
+    document.getElementById('errPass2').innerHTML = '';
     var verif = true;
 
     var nom = document.getElementById('Cname').value;
@@ -46,6 +53,14 @@ function validarDatos(){
     var patNum = /[0-9]/;
     var patUsu = /[A-Za-z0-9_-]/;
     var patPass = /[$%A-Za-zñáéíóú0-9_-]/;
+
+    if(contra==contra2){
+
+    }else{
+        verif = false;
+        document.getElementById('errPass').innerHTML= "*Las contraseñas deben coincidir";
+        document.getElementById('errPass2').innerHTML= "*Las contraseñas deben coincidir";
+    }
 
     if(fn==""){
         verif = false;
