@@ -1,13 +1,57 @@
-body { 
-    height: 100vh;
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.body-container{
+    padding-top: 60px;
+}
+
+.busqueda{
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 20px;
+}
+
+#searchBot{
+    display: none;
+}
+
+.iconB:hover{
+    color: rgb(63, 49, 31);
+    cursor: pointer;
+}
+
+.formB{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.bBusc{
+    border-bottom: 2px solid rgb(0, 0, 0);
+    width: 70%;
+}
+
+.inputB{
+    padding: .5rem;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 90%;
+}    
+
+.product-container { 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .conte{
     height: 510px;
     width: 25%;
+    max-width: 300px;
     box-shadow: 0 0 7px #111;
     margin: 50px 30px;
 }
@@ -16,38 +60,16 @@ body {
     height: 200px;
     width: 100%;
     margin-bottom: 170px;
+    background-color: #111;
 }
 
 .card img{
     margin: auto;
-    display: block;
 }
 
-.chocolate img{
-    height: 330px;
-    width: 200px;
-}
-
-.conte .chocolate{
-    background-color: #111;
-}
-
-.conte .vainilla{
-    background-color: #6A0C0B;
-}
-
-.conte .fresa{
-    background-color: #B11313;
-}
-
-.vainilla img{
-    height: 330px;
-    width: 200px;
-}
-
-.nutella img{
-    height: 330px;
-    width: 200px;
+.conte img{
+    max-height: 320px;
+    max-width: 320px;
 }
 
 .informacion{
