@@ -35,14 +35,40 @@
             </nav>
         </header>
         <div class="body-container">
-            <div class="busqueda">
-                <form name="buscarP" class="formB">
-                    <div class="bBusc">
-                        <label for="searchBot"><i class="fas fa-search iconB"></i></label><input type="text" name="busqueda" class="inputB" placeholder="Buscar Productos">
-                        <input type="submit" id="searchBot">
+            <form name="buscarP" class="formB"></form>
+                <div class="busqueda">
+                        <div class="bBusc">
+                            <label for="searchBot"><i class="fas fa-search iconB"></i></label><input type="text" name="busqueda" class="inputB" placeholder="Buscar Productos">
+                            <input type="submit" id="searchBot">
+                        </div>
+                </div>
+                <div class="filters">
+                    <div class="filtro">
+                        <label>Sabor:</label>
+                        <select name="" id="" class="filt">
+                            <option value="">Todos</option>
+                            <option value="">Chocolate</option>
+                            <option value="">Vainilla</option>
+                        </select>
                     </div>
-                </form>
-            </div>
+                    <div class="filtro">
+                        <label>Presentacion:</label>
+                        <select name="" id="" class="filt">
+                            <option value="">Todos</option>
+                            <option value="">Cono</option>
+                            <option value="">Vaso</option>
+                        </select>
+                    </div>
+                    <div class="filtro">
+                        <label>Tamaño:</label>
+                        <select name="" id="" class="filt">
+                            <option value="">Todos</option>
+                            <option value="">Grande</option>
+                            <option value="">Jumbo</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
             <div class="product-container">
                 <div class="conte">
                     <div class="card chocolate">
