@@ -35,7 +35,6 @@ function validarDatos(){
     document.getElementById('errCel').innerHTML = '';
     document.getElementById('errUsu').innerHTML = '';
     document.getElementById('errPass').innerHTML = '';
-    document.getElementById('errPass2').innerHTML = '';
     var verif = true;
 
     var nom = document.getElementById('Cname').value;
@@ -47,20 +46,11 @@ function validarDatos(){
     var usu = document.getElementById('Cusu').value;
     var usu = document.getElementById('Cusu').value;
     var contra = document.getElementById('Cpass').value;
-    var contra2 = document.getElementById('Cpass2').value;
 
     var patNom = /[A-Za-zñáéíóú]/;
     var patNum = /[0-9]/;
     var patUsu = /[A-Za-z0-9_-]/;
     var patPass = /[$%A-Za-zñáéíóú0-9_-]/;
-
-    if(contra==contra2){
-
-    }else{
-        verif = false;
-        document.getElementById('errPass').innerHTML= "*Las contraseñas deben coincidir";
-        document.getElementById('errPass2').innerHTML= "*Las contraseñas deben coincidir";
-    }
 
     if(fn==""){
         verif = false;
@@ -125,16 +115,6 @@ function validarDatos(){
     if(usu.length>20){
         verif = false;
         document.getElementById('errUsu').innerHTML= "*El maximo de caracteres es de 20";
-    }
-
-    if(contra2.length<5){
-        verif = false;
-        document.getElementById('errPass2').innerHTML= "*La contraseña debe tener por lo menos 5 caracteres";
-    }
-
-    if(contra2.length>20){
-        document.getElementById('errPass2').innerHTML= "*El maximo de caracteres es de 20";
-        verif = false;
     }
 
     if(contra.length<5){
@@ -209,15 +189,5 @@ function validarDatos(){
             verif = false;
         }
     }
-
-    for(var i=0;i<contra2.length;i++){
-        if(patPass.test(contra2[i])){
-
-        }else{
-            document.getElementById('errPass2').innerHTML= "*Ingreso algun caracter invalido";
-            verif = false;
-        }
-    }
-
     return verif;
 }

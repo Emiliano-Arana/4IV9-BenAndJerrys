@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/gestionUsuStyle.css">
     <link rel="stylesheet" href="./css/styleNavFoot.css">
-    <link rel="stylesheet" href="./css/styleForm.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -17,50 +17,51 @@
         <header class="header">
             <nav class="nav">
               <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
-              <button class="nav-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-              </button>
-              <ul class="nav-menu">
-                <li id="tre" class="btn btn--4">
-                  <a href="./conocenos.html" class="nav-menu-link">Conocenos</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Productos</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Carrito</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                    <a href="#" class="nav-menu-link">Acceder</a>
-                  </li>
-              </ul>
             </nav>
         </header>
-        <div class="body-container">
-            <form class="formularioCam">
-                <p class="title">Inicio Sesion</p>
-                <div class="container-campo">
-                    <label class="nombre-campo" for="Cusu">Usuario</label>
-                    <br>
-                    <label class="error" id="errUsu"></label>
-                    <div class="campo">
-                        <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" onkeypress="return validarUsu(event)" class="text-campo">
-                    </div>
-                </div>
-                <div class="container-campo">
-                    <label class="nombre-campo" for="Cpass">Contraseña</label>
-                    <br>
-                    <label class="error" id="errPass"></label>
-                    <div class="campo">
-                        <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" onkeypress="return validarPass(event)" class="text-campo">
-                    </div>
-                </div>
-                <div class="container-campo">
-                    <p class="extraLink">¿No tienes cuenta? <a class="linkE" href="registro.html">Registrate</a></p>
-                    <input type="submit" class="subir" value="Iniciar Sesion" onclick="return validarDatos()">
-                </div>
+        <form>
+        <section class="form-tarjeta">
+            <h5>Tarjeta</h5>
+            Tipo de Tarjeta:
+            <select name="ttarjeta" class="control_0" id="tipoT">
+                <option>Ninguna</option>
+                <option>Visa</option>
+                <option>MasterCard</option>
+                <option>American Express</option>
+            </select>
+            <br>
+            Nombre del banco:
+            <select name="nbanco" class="control_0" id="nBanco">
+                <option>Ninguno</option>
+                <option>BBVA</option>
+                <option>Bancomer</option>
+                <option>Banorte</option>
+                <option>Santander</option>
+                <option>Citibanamex</option>
+                <option>HSBC</option>
+                <option>Scotiabank</option>
+                <option>Banco Azteca</option>
+            </select>
+            <br>
+            Numero de Tarjeta:
+            <label class="error" id="errNTar"></label>
+            <input class="control_1" type="text" name="ntarjeta" value="" onkeypress="return validarNum(event)" id="numTar" placeholder="Número de la tarjeta de crédito/débito">
+            <br>
+            Nombre:
+            <label class="error" id="errNom"></label>
+            <input class="control_1" type="text" name="nombre" value="" onkeypress="return validarNom(event)" id="nomP" placeholder="Nombre del propietario">
+            <br>
+            Fecha de expiración:
+            <label class="error" id="errFE"></label>
+            <input class="control_2" type="datetime" name="Fechaexp" onkeypress="return validarFE(event)" id="FE" value="" placeholder="MM/AA">
+            <br>
+            Código:
+            <label class="error" id="errCod"></label>
+            <input class="control_2" type="text" name="cvc"  value="" placeholder="cvc" id="codCvc">
+            <input class="buttons" type="submit" onclick="return validarDatos()" name="" value="Actualizar">
+            <h4><a href="gestionarUsu.html">Regresar</a></h4>
+            </section>
             </form>
-        </div>
         <footer>
             <h1 id=con>Contactanos</h1>
             <div class=formulario>
@@ -92,7 +93,6 @@
             </div>
         </footer>
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/validacionIS.js"></script>
+    <script src="./js/validacionTar.js"></script>
 </body>
 </html>

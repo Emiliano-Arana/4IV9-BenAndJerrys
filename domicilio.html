@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/gestionUsuStyle.css">
     <link rel="stylesheet" href="./css/styleNavFoot.css">
-    <link rel="stylesheet" href="./css/styleForm.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
@@ -17,50 +17,60 @@
         <header class="header">
             <nav class="nav">
               <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
-              <button class="nav-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-              </button>
-              <ul class="nav-menu">
-                <li id="tre" class="btn btn--4">
-                  <a href="./conocenos.html" class="nav-menu-link">Conocenos</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Productos</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Carrito</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                    <a href="#" class="nav-menu-link">Acceder</a>
-                  </li>
-              </ul>
             </nav>
         </header>
-        <div class="body-container">
-            <form class="formularioCam">
-                <p class="title">Inicio Sesion</p>
+        <form>
+            <section class="form-tarjeta">
+                <h5>Direccion</h5>
                 <div class="container-campo">
-                    <label class="nombre-campo" for="Cusu">Usuario</label>
-                    <br>
-                    <label class="error" id="errUsu"></label>
+                    <label class="error" id="errCalle"></label>
                     <div class="campo">
-                        <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" onkeypress="return validarUsu(event)" class="text-campo">
+                        <label for="Cname">Calle:</label>
+                        <input type="text" placeholder="Calle" id="Ccalle" name="Calle" onkeypress="return validarNom(event)" class="control_1">
                     </div>
                 </div>
                 <div class="container-campo">
-                    <label class="nombre-campo" for="Cpass">Contraseña</label>
-                    <br>
-                    <label class="error" id="errPass"></label>
+                    <label class="error" id="errNoExt"></label>
                     <div class="campo">
-                        <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" onkeypress="return validarPass(event)" class="text-campo">
+                        <label for="Cappat">No Exterior:</label>
+                        <input type="text" placeholder="Numero Exterior" id="CnoExt" name="noExt" onkeypress="return validarNum(event)" class="control_2">
                     </div>
                 </div>
                 <div class="container-campo">
-                    <p class="extraLink">¿No tienes cuenta? <a class="linkE" href="registro.html">Registrate</a></p>
-                    <input type="submit" class="subir" value="Iniciar Sesion" onclick="return validarDatos()">
+                    <label class="error" id="errNoInt"></label>
+                    <div class="campo">
+                        <label for="Capmat">No Interior:</label>
+                        <input type="text" placeholder="Numero Interior" id="CnoInt" name="noInt" onkeypress="return validarNum(event)" class="control_2">
+                    </div>
                 </div>
-            </form>
-        </div>
+                <div class="container-campo">
+                    <label class="error" id="errAlc"></label>
+                    <div class="campo">
+                        <label for="Cfn">Alcaldia:</label>
+                        <select name="alcaldia" class="control_0" id="Calcaldia">
+                            <option>Ninguna</option>
+                            <option>Visa</option>
+                            <option>MasterCard</option>
+                            <option>American Express</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="error" id="errCol"></label>
+                    <div class="campo">
+                        <label for="Ctel">Colonia:</label>
+                        <select name="colonia" class="control_0" id="Ccolonia">
+                            <option>Ninguna</option>
+                            <option>Visa</option>
+                            <option>MasterCard</option>
+                            <option>American Express</option>
+                        </select>
+                    </div>
+                </div>
+                <input class="buttons" onclick="return validarDatos()" type="submit" name="" value="Actualizar">
+                <h4><a href="gestionarUsu.html">Regresar</a></h4>
+            </section>
+        </form>
         <footer>
             <h1 id=con>Contactanos</h1>
             <div class=formulario>
@@ -92,7 +102,6 @@
             </div>
         </footer>
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/validacionIS.js"></script>
+    <script src="./js/validacionDom.js"></script>
 </body>
 </html>
