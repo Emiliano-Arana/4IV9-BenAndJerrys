@@ -5,12 +5,16 @@
  */
 package Servlet;
 
+import Modelo.DCompra;
+import Modelo.MProducto;
 import Modelo.MUsuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,7 +24,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author mercu
  */
-public class VerificarUsuario extends HttpServlet {
+@WebServlet(name = "AgregarCarrito", urlPatterns = {"/AgregarCarrito"})
+public class AgregarCarrito extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,39 +40,58 @@ public class VerificarUsuario extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            HttpSession sesionusu = request.getSession();
             
-            String user, pass;
+            Vector<DCompra> detallecompra = null;
+            Vector<MProducto> stockproducto = null;
             
-            user = request.getParameter("txtUsuario");
-            pass = request.getParameter("txtPassword");
+            if(sesionusu.getAttribute("detallecompraproductos")!= null){
+                 detallecompra = (Vector<DCompra>)sesionusu.getAttribute("detallecompraproductos");
+                stockproducto = (Vector<MProducto>)sesionusu.getAttribute("stockproducto");
+            }else{
+                detallecompra = new Vector<DCompra>();
+                stockproducto = new Vector<MProducto>();
+            }
             
+               int codigo, cantidad;
+            
+            codigo = Integer.parseInt(request.getParameter("txtCodigo").trim());
+            cantidad = Integer.parseInt(request.getParameter("txtCantidad").trim());
+            
+            MProducto producto = new MProducto();
+            
+            producto = producto.buscarProducto(codigo);
+            
+            double subtotal = 0;
+            
+            subtotal = cantidad*producto.getPrecio_producto();
+            
+            //debo saber como esta el carrito con los productos
+            
+            DCompra detallecompraproducto = new DCompra();
             MUsuario u = new MUsuario();
             
-            u = u.verificarUsuario(user, pass);
+            detallecompraproducto.setId_dcompra(detallecompra.size()+1);
+            detallecompraproducto.setId_producto(codigo);
+            detallecompraproducto.setCantidad_dcompra(cantidad);
+            detallecompraproducto.setSubtotal_dcompra(subtotal);
+            detallecompraproducto.setId_ecompra(u.getId_usuario());
+            detallecompra.add(detallecompraproducto);
             
-            if(u!=null){
-                //el usuario si existe en la bd
-                HttpSession sesionusu = request.getSession(true);
-                sesionusu.setAttribute("usuario", u);//del modelo
-                
-                HttpSession sesionparametro = request.getSession();
-                sesionparametro.setAttribute("usuario", user);//del parametro
-                
-                if(u.getPrivilegio_usuario() == 0){
-                    //cliente
-                    response.sendRedirect("MostrarHelados.jsp");
-                }else{
-                    //admin
-                    response.sendRedirect("MostrarAdministrador.jsp");
-                }
-            }else{
-                //el usuario no esta registrado
-                response.sendRedirect("error.jsp");
-            }
+            sesionusu.setAttribute("detallecompraproductos", detallecompra);
+            
+            producto.setStock_producto(producto.getStock_producto()-cantidad);
+            stockproducto.add(producto);
+            
+            sesionusu.setAttribute("stockproducto", stockproducto);
+            
+            response.sendRedirect("MostrarCarrito.jsp");
+
         }
     }
 
-   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
@@ -82,7 +106,7 @@ public class VerificarUsuario extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VerificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AgregarCarrito.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -100,7 +124,7 @@ public class VerificarUsuario extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(VerificarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AgregarCarrito.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

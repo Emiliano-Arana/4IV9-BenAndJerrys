@@ -64,6 +64,52 @@ public class MProducto {
         }
         return listaproductos;
     }
+     
+    public MProducto buscarProducto(int codigoproducto) throws ClassNotFoundException{
+        MProducto producto = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConexion();
+            String q = "select * from MProducto where id_producto = ?";
+            //querry donde se obtenga a traves de join o con vista
+            ps = con.prepareStatement(q);
+            ps.setInt(1, codigoproducto);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                producto = new MProducto();
+                producto.setId_producto(rs.getInt("id_producto"));
+                producto.setId_tipohelado(rs.getInt("id_tipohelado"));
+                //ctipohelado.setSabor_tipohelado(rs.getString("sabor_tipohelado"))
+                producto.setId_promocion(rs.getInt("id_promocion"));
+                producto.setId_cantidad(rs.getInt("id_cantidad"));
+                producto.setId_tamano(rs.getInt("id_tamano"));
+                producto.setId_presentacion(rs.getInt("id_presentacion"));
+                producto.setStock_producto(rs.getInt("stock_producto"));
+                producto.setPrecio_producto(rs.getDouble("precio_producto"));
+                
+            }
+            
+        }catch(SQLException sq){
+            System.out.println("Error al buscar el producto");
+            System.out.println(sq.getMessage());
+            producto = null;
+        
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("Error no encuentra la clase");
+                System.out.println(e.getMessage());
+            }
+        }
+        return producto;
+    }
+     
     public boolean actualizarStock(Vector<MProducto> vectorproducto) throws ClassNotFoundException{
         boolean actualizo = false;
         Connection con = null;
@@ -165,5 +211,6 @@ public class MProducto {
     public void setPrecio_producto(double precio_producto) {
         this.precio_producto = precio_producto;
     }
+
      
 }
