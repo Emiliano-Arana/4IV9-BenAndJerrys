@@ -8,6 +8,10 @@ body{
     background-image: url(https://static.vecteezy.com/system/resources/previews/000/333/037/non_2x/hand-drawn-ice-cream-seamless-pattern-vector.jpg);
 }
 
+.main-container{
+    padding-top: 110px;
+}
+
 .tablaConsulta{
     width: 90%;
     max-width: 900px;
@@ -114,4 +118,35 @@ body{
     font-size: 1rem;
     margin-right: 1rem;
     border-bottom: 1px solid rgb(146, 116, 78);
+}
+
+.filtros{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.836);
+    padding: .3rem 1rem;
+    justify-content: center;
+}
+
+.filtroU{
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+.opciones{
+    background-color: #dddddd00;
+    font-size: 1.1rem;
+    padding: .3rem;
+    color: rgb(146, 116, 78);
+    border-bottom: 1px solid rgb(146, 116, 78);
+    outline: none;
+}
+
+#buscarP{
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .disappear{
+        display: none;
+    }
 }

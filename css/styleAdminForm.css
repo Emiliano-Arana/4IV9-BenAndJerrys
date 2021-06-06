@@ -8,6 +8,10 @@ body{
     background-image: url(https://static.vecteezy.com/system/resources/previews/000/333/037/non_2x/hand-drawn-ice-cream-seamless-pattern-vector.jpg);
 }
 
+.main-container{
+    padding-top: 60px;
+}
+
 .formularioProductos{
     width: 90%;
     margin: 30px auto;
@@ -16,6 +20,11 @@ body{
     border-radius: 5px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.error{
+    font-size: .8rem;
+    color: rgb(207, 60, 60);
 }
 
 .title{
@@ -85,6 +94,18 @@ body{
     color: aliceblue;
     outline: none;
     width: 6rem;
+}
+
+.text-campoNom{
+    font-size: 1rem;
+    padding: .3rem;
+    margin-left: 1rem;
+    border: none;
+    border-bottom: 1px solid aliceblue;
+    background-color: rgba(240, 248, 255, 0);
+    color: aliceblue;
+    outline: none;
+    width: 12rem;
 }
 
 .text-campo:focus{

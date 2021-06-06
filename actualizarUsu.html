@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleAdminForm.css">
+    <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <title>Actualizar Producto</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+          <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
+    </header>
+    <div class="main-container">
+        <form class="formularioProductos">
+            <p class="title">Actualizar Usuario</p>
+            <div class="non-combobox">
+                <div class="container-campo">
+                    <label class="error" id="errUsu"></label>
+                    <label class="nombre-campo" for="Cusu">Usuario:</label>
+                    <input type="text" id="Cusu" name="usu" onkeypress="return validarUsu(event)" class="text-campoNom">
+                </div>
+                <div class="container-campo">
+                    <label class="error" id="errPass"></label>
+                    <label class="nombre-campo" for="Cpass">Contraseña:</label>
+                    <input type="password" id="Cpass" name="pass" onkeypress="return validarPass(event)" class="text-campoNom">
+                </div>
+            </div>
+            <div class="container-boton">
+                <input type="submit" onclick="return validarDatos()" value="Actualizar" class="boton">
+            </div>
+            <a class="return" href="adminUsu.html">Regresar</a>
+        </form>
+    </div>
+    <script src="./js/validacionIS.js"></script>
+</body>
+</html>
