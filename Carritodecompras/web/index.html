@@ -6,11 +6,33 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>WWE</title>
+        <title>TODO supply a title</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
     </head>
     <body>
-        <div>All Elite Wrestling</div>
+        <div class="container" >
+            <h1>Inicio de Sesión</h1>
+            <br>
+            <form method="post" name="loggin" action="VerificarUsuario" >
+                <table border="2" >
+                    <tr>
+                        <td>Usuario:</td>
+                        <td><input type="text" name="txtUsuario"
+                                   id="txtUsuario"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="txtPassword"
+                                   id="txtPassword"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Ingresar" ></td>
+                    </tr>
+                </table>     
+            </form>
+        </div>
     </body>
 </html>

@@ -13,7 +13,7 @@ import java.sql.*;
  * @author mercu
  */
 public class MUsuario {
-    private int id_usuario, privilegio_usuario, id_direccion;
+    private int id_usuario, privilegio_usuario, id_direccion, id_tarjeta;
     private String nombre_usuario, appat_usuario, apmat_usuario;
     private String fecha_nacimiento_usuario, tel_usuario, cel_usuario;
     private String user_usuario, pass_usuario;
@@ -90,6 +90,14 @@ public class MUsuario {
 
     public void setId_direccion(int id_direccion) {
         this.id_direccion = id_direccion;
+    }
+
+    public int getId_tarjeta() {
+        return id_tarjeta;
+    }
+
+    public void setId_tarjeta(int id_tarjeta) {
+        this.id_tarjeta = id_tarjeta;
     }
 
     public String getNombre_usuario() {
