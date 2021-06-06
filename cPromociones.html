@@ -7,86 +7,64 @@
     <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styleNavFoot.css">
     <link rel="stylesheet" href="./css/styleAdminTable.css">
-    <title>CRUD Usuarios</title>
+    <title>Sabores</title>
 </head>
 <body>
     <div class="main-container">
         <header class="header">
             <nav class="nav">
               <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
-              <button class="nav-toggle" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-              </button>
-              <ul class="nav-menu">
-                <li id="tre" class="btn btn--4">
-                  <a href="adminProductos.html" class="nav-menu-link">Productos</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Usuarios</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                  <a href="consultaVentas.html" class="nav-menu-link">Ventas</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                    <a href="menuCatalogos.html" class="nav-menu-link">Catalogos</a>
-                  </li>
-              </ul>
+              <a href="menuCatalogos.html" class="return">Regresar</a>
             </nav>
         </header>
         <div class="tablaConsulta">
+            <div class="miniAdd">
+                <form name="formAdd">
+                    <label class="labRC">Promocion:</label>
+                    <input type="text" id="cPromo" name="promo" class="txtRC">
+                    <input type="submit" value="Agregar" class="addRC">
+                </form>
+            </div>
             <form class="form-tabla" name="tablaP">
                 <div class="acciones">
                     <label for="edit"><i class="fas fa-edit icon"></i></label>
                     <input type="submit" value="Edit" class="boton-accion" id="edit">
                     <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
                     <input type="submit" value="Add" class="boton-accion" id="delete">
-                    <div class="buscarContainer">
-                        <form id="buscarID">
-                            <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="buscarID" onkeypress="return validarNum(event)" id="buscarBD" name="busqueda" placeholder="Ingrese el ID" type="text" class="buscar">
-                            <input type="submit" onclick="return validarDatos()" id="buscarP">
-                        </form>
-                    </div>
                 </div>
                 <table class="tabla">
                     <thead class="titulosCol">
                         <tr>
                             <td id="seleccion"></td>
                             <td>ID</td>
-                            <td>Usuario</td>
-                            <td>Contraseña</td>
+                            <td>Promocion</td>
                         </tr>
                     </thead>
                     <tbody class="registros">
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
+                            <td>Chocolate</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
+                            <td>Chocolate</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
+                            <td>Chocolate</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
+                            <td>Chocolate</td>
                         </tr>
                     </tbody>
                 </table>
             </form>
         </div>
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/validarBusquedasID.js"></script>
 </body>
 </html>
