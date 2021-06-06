@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styleNavFoot.css">
     <link rel="stylesheet" href="./css/styleAdminTable.css">
-    <title>CRUD Productos</title>
+    <title>Consulta Ventas</title>
 </head>
 <body>
     <div class="main-container">
@@ -19,13 +19,13 @@
               </button>
               <ul class="nav-menu">
                 <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Productos</a>
+                  <a href="adminProductos.html" class="nav-menu-link">Productos</a>
                 </li>
                 <li id="tre" class="btn btn--4">
                   <a href="adminUsu.html" class="nav-menu-link">Usuarios</a>
                 </li>
                 <li id="tre" class="btn btn--4">
-                  <a href="consultaVentas.html" class="nav-menu-link">Ventas</a>
+                  <a href="#" class="nav-menu-link">Ventas</a>
                 </li>
                 <li id="tre" class="btn btn--4">
                     <a href="#" class="nav-menu-link">Catalogos</a>
@@ -36,38 +36,12 @@
         <div class="tablaConsulta">
             <form class="form-tabla" name="tablaP">
                 <div class="acciones">
-                    <label for="add"><i class="fas fa-plus icon"></i></label>
-                    <input type="submit" value="Add" class="boton-accion" id="add">
-                    <label for="edit"><i class="fas fa-edit icon"></i></label>
-                    <input type="submit" value="Edit" class="boton-accion" id="edit">
-                    <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
-                    <input type="submit" value="Add" class="boton-accion" id="delete">
-                    <div class="buscarContainer">
-                        <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="filtrosForm" onkeypress="return validarNum(event)" name="busqueda" placeholder="Ingrese el ID" type="text" id="buscarBD" class="buscar">
+                    <div style="margin-bottom: 10px;" class="buscarContainer">
+                        <form id="buscarID">
+                            <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="buscarID" onkeypress="return validarNum(event)" id="buscarBD" name="busqueda" placeholder="Ingrese el ID" type="text" class="buscar">
+                            <input type="submit" onclick="return validarDatos()" id="buscarP">
+                        </form>
                     </div>
-                </div>
-                <div class="filtros">
-                    <form id="filtrosForm">
-                        <div class="filtroU">
-                            <label>Sabor:</label>
-                            <select class="opciones">
-                                <option>Todos</option>
-                            </select>
-                        </div>
-                        <div class="filtroU">
-                            <label>Presentacion:</label>
-                            <select class="opciones">
-                                <option>Todos</option>
-                            </select>
-                        </div>
-                        <div class="filtroU">
-                            <label>Tamaño:</label>
-                            <select class="opciones">
-                                <option>Todos</option>
-                            </select>
-                        </div>
-                        <input onclick="return validarDatos()" type="submit" id="buscarP">
-                    </form>
                 </div>
                 <table class="tabla">
                     <thead class="titulosCol">
@@ -75,12 +49,9 @@
                             <td id="seleccion"></td>
                             <td>ID</td>
                             <td>Sabor</td>
-                            <td class="disappear">Cantidad</td>
                             <td class="disappear">Tamaño</td>
                             <td class="disappear">Presentacion</td>
-                            <td>Precio</td>
-                            <td class="disappear">Promocion</td>
-                            <td>Stock</td>
+                            <td>Ventas</td>
                         </tr>
                     </thead>
                     <tbody class="registros">
@@ -88,44 +59,32 @@
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
                             <td>Chocolate</td>
-                            <td class="disappear">100gr</td>
                             <td class="disappear">Jumbo</td>
                             <td class="disappear">Cono</td>
-                            <td>100</td>
-                            <td class="disappear">2x1</td>
                             <td>100</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
                             <td>Chocolate</td>
-                            <td class="disappear">100gr</td>
                             <td class="disappear">Jumbo</td>
                             <td class="disappear">Cono</td>
-                            <td>100</td>
-                            <td class="disappear">2x1</td>
                             <td>100</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
                             <td>Chocolate</td>
-                            <td class="disappear">100gr</td>
                             <td class="disappear">Jumbo</td>
                             <td class="disappear">Cono</td>
-                            <td>100</td>
-                            <td class="disappear">2x1</td>
                             <td>100</td>
                         </tr>
                         <tr>
                             <td><input type="radio" name="producto" value="" class="radio-button"></td>
                             <td>1</td>
                             <td>Chocolate</td>
-                            <td class="disappear">100gr</td>
                             <td class="disappear">Jumbo</td>
                             <td class="disappear">Cono</td>
-                            <td>100</td>
-                            <td class="disappear">2x1</td>
                             <td>100</td>
                         </tr>
                     </tbody>
