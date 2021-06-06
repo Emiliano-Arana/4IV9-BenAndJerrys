@@ -21,10 +21,10 @@
             <div class="miniAdd">
                 <form name="formAdd">
                     <label class="labRC">Cantidad:</label>
-                    <input type="text" id="cCant" name="cant" class="txtRC">
+                    <input type="text" id="cCant" name="cant" class="txtRC" onkeypress="return validarNum(event)">
                     <label class="labRC">Unidad:</label>
-                    <input type="text" id="cUnit" name="unit" class="txtRC">
-                    <input type="submit" value="Agregar" class="addRC">
+                    <input type="text" id="cUnit" name="unit" class="txtRC" onkeypress="return validadLetras(event)">
+                    <input type="submit" onclick="return validarDatos()" value="Agregar" class="addRC">
                 </form>
             </div>
             <form class="form-tabla" name="tablaP">
@@ -73,5 +73,6 @@
             </form>
         </div>
     </div>
+    <script src="./js/validacionCCant.js"></script>
 </body>
 </html>

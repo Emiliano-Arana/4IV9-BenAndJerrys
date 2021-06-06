@@ -21,8 +21,8 @@
             <div class="miniAdd">
                 <form name="formAdd">
                     <label class="labRC">Promocion:</label>
-                    <input type="text" id="cPromo" name="promo" class="txtRC">
-                    <input type="submit" value="Agregar" class="addRC">
+                    <input type="text" id="cPromo" name="promo" onkeypress="return validarNom(event)" class="txtRC">
+                    <input type="submit" value="Agregar" onclick="return validarDatos()" class="addRC">
                 </form>
             </div>
             <form class="form-tabla" name="tablaP">
@@ -66,5 +66,6 @@
             </form>
         </div>
     </div>
+    <script src="./js/validacionCPromo.js"></script>
 </body>
 </html>
