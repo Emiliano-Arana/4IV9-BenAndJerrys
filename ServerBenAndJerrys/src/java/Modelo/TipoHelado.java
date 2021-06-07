@@ -9,6 +9,11 @@ package Modelo;
  *
  * @author Emiliano
  */
+
+import java.util.Vector;
+import Control.Conexion;
+import java.sql.*;
+
 public class TipoHelado {
     private int id_tipoH;
     private String tipoH;
@@ -32,5 +37,40 @@ public class TipoHelado {
         this.tipoH = tipoH;
     }
     
-    
+    public Vector<TipoHelado> listaSabores() throws ClassNotFoundException{
+        Vector<TipoHelado> listaSabores = new Vector<TipoHelado>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from ctipo_helado";
+            //querry donde se obtenga a traves de join o con vista
+            ps = con.prepareStatement(q);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                TipoHelado sabor = new TipoHelado();
+                sabor.setId_tipoH(rs.getInt("id_tipohelado"));
+                sabor.setTipoH(rs.getString("sabor_tipohelado"));
+                listaSabores.add(sabor);
+            }
+            
+        }catch(SQLException sq){
+            System.out.println("Error al consultar los productos");
+            System.out.println(sq.getMessage());
+            listaSabores = null;
+        
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("Error no encuentra la clase");
+                System.out.println(e.getMessage());
+            }
+        }
+        return listaSabores;
+    }
 }

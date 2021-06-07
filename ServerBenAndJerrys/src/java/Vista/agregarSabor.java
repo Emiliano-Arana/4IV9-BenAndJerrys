@@ -11,8 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Modelo.Usuario;
-import Control.AccionesInv;
+import Modelo.TipoHelado;
+import Control.AccionesAdmin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author Emiliano
  */
-public class registrarUsu extends HttpServlet {
+public class agregarSabor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,49 +36,30 @@ public class registrarUsu extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String sabor;
             
-            String nom,appat,apmat,fn,tel,cel,usu,pass;
+            sabor = request.getParameter("sabor");
             
-            nom = request.getParameter("nombreUsu");
-            appat = request.getParameter("appatUsu");
-            apmat = request.getParameter("apmatUsu");
-            fn = request.getParameter("fnUsu");
-            tel = request.getParameter("telUsu");
-            cel = request.getParameter("celUsu");
-            usu = request.getParameter("usu");
-            pass = request.getParameter("pass");
+            AccionesAdmin acc = new AccionesAdmin();
             
-            AccionesInv acc = new AccionesInv();
+            TipoHelado busc = acc.repetidosSabores(sabor);
             
-            Usuario busc = acc.verificarEUsuario(usu);
-            
-            if(usu.equals("adminBenJerry")){
-                
-            }else{
                 if(busc==null){
-                    Usuario objUsu = new Usuario();
+                    TipoHelado objSab = new TipoHelado();
 
-                    objUsu.setNom(nom);
-                    objUsu.setAppat(appat);
-                    objUsu.setApmat(apmat);
-                    objUsu.setFN(fn);
-                    objUsu.setTel(Integer.parseInt(tel));
-                    objUsu.setCel(Integer.parseInt(cel));
-                    objUsu.setUsu(usu);
-                    objUsu.setPass(pass);
+                    objSab.setTipoH(sabor);
 
-                    int estatus = AccionesInv.registrarUsuario(objUsu);
+                    int estatus = AccionesAdmin.registrarSabor(objSab);
 
 
                     if(estatus > 0){
-                        response.sendRedirect("inicioSesion.html");
+                        response.sendRedirect("cSabores.jsp");
                     }else{
-                        response.sendRedirect("index.html");
+                        response.sendRedirect("cSabores.jsp");
                     }
                 }else{
-                    
+                    response.sendRedirect("cSabores.jsp");
                 }
-            }
         }
     }
 
@@ -97,7 +78,7 @@ public class registrarUsu extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(registrarUsu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(agregarSabor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -115,7 +96,7 @@ public class registrarUsu extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(registrarUsu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(agregarSabor.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

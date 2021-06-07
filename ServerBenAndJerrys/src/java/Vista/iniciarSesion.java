@@ -15,12 +15,13 @@ import Modelo.Usuario;
 import Control.AccionesInv;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Emiliano
  */
-public class registrarUsu extends HttpServlet {
+public class iniciarSesion extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,46 +38,34 @@ public class registrarUsu extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            String nom,appat,apmat,fn,tel,cel,usu,pass;
+            String usu,pass;
             
-            nom = request.getParameter("nombreUsu");
-            appat = request.getParameter("appatUsu");
-            apmat = request.getParameter("apmatUsu");
-            fn = request.getParameter("fnUsu");
-            tel = request.getParameter("telUsu");
-            cel = request.getParameter("celUsu");
             usu = request.getParameter("usu");
             pass = request.getParameter("pass");
             
-            AccionesInv acc = new AccionesInv();
+            Usuario objUsu = new Usuario();
             
-            Usuario busc = acc.verificarEUsuario(usu);
-            
-            if(usu.equals("adminBenJerry")){
+            if(usu.equals("adminBenJerry")&&pass.equals("BaJs3159")){
+                
+                objUsu.setUsu(usu);
+                objUsu.setPass(pass);
+                HttpSession sesionusu = request.getSession(true);
+                sesionusu.setAttribute("usuario", objUsu);
+                response.sendRedirect("adminProductos.html");
                 
             }else{
-                if(busc==null){
-                    Usuario objUsu = new Usuario();
-
-                    objUsu.setNom(nom);
-                    objUsu.setAppat(appat);
-                    objUsu.setApmat(apmat);
-                    objUsu.setFN(fn);
-                    objUsu.setTel(Integer.parseInt(tel));
-                    objUsu.setCel(Integer.parseInt(cel));
-                    objUsu.setUsu(usu);
-                    objUsu.setPass(pass);
-
-                    int estatus = AccionesInv.registrarUsuario(objUsu);
+                AccionesInv acc = new AccionesInv();
+                objUsu = acc.verificarUsuario(usu,pass);
 
 
-                    if(estatus > 0){
-                        response.sendRedirect("inicioSesion.html");
-                    }else{
-                        response.sendRedirect("index.html");
-                    }
+                if(objUsu!=null){
+                    HttpSession sesionusu = request.getSession(true);
+                    sesionusu.setAttribute("usuario", objUsu);
+                    response.sendRedirect("gestionarUsu.html");
+
                 }else{
-                    
+                    //el usuario no esta registrado
+                    response.sendRedirect("inicioSesion.html");
                 }
             }
         }
@@ -97,7 +86,7 @@ public class registrarUsu extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(registrarUsu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -115,7 +104,7 @@ public class registrarUsu extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(registrarUsu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

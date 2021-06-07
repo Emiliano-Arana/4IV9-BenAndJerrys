@@ -13,7 +13,7 @@ package Control;
 import java.sql.*;
 
 public class Conexion {
-    public static Connection getConnection(){
+    public static Connection getConection(){
         String url, userName, password;
         
         url = "jdbc:mysql://localhost/benandjerrys";

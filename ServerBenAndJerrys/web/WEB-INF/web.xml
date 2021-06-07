@@ -4,9 +4,25 @@
         <servlet-name>registrarUsu</servlet-name>
         <servlet-class>Vista.registrarUsu</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>iniciarSesion</servlet-name>
+        <servlet-class>Vista.iniciarSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>agregarSabor</servlet-name>
+        <servlet-class>Vista.agregarSabor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarUsu</servlet-name>
         <url-pattern>/registrarUsu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>iniciarSesion</servlet-name>
+        <url-pattern>/iniciarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarSabor</servlet-name>
+        <url-pattern>/agregarSabor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
