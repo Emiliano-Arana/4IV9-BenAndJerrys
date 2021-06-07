@@ -1,11 +1,11 @@
 <%-- 
-    Document   : cSabores
-    Created on : Jun 7, 2021, 2:22:17 AM
+    Document   : cTamanos
+    Created on : Jun 7, 2021, 1:04:27 PM
     Author     : Emiliano
 --%>
 
 <%@page import="java.util.Vector"%>
-<%@page import="Modelo.TipoHelado"%>
+<%@page import="Modelo.Tamano"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
     <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styleNavFoot.css">
     <link rel="stylesheet" href="./css/styleAdminTable.css">
-    <title>Sabores</title>
+    <title>Tamaños</title>
 </head>
 <body>
     <div class="main-container">
@@ -33,47 +33,47 @@
                 
                 if(act){
                     %>
-                <form name="formAdd" action="actualizarSabor">
-                    <label class="labRC">Sabor:</label>
-                    <input type="text" value="<%=request.getParameter("id")%>" name="idS" style="display: none;">
-                    <input type="text" value="<%=request.getParameter("nom")%>" id="cSabor" name="sabor" class="txtRC" onkeypress="return validarNom(event)">
-                    <input type="submit" onclick="return validarDatos()" value="Actualizar" class="addRC">
-                </form>
-                <%
-                }else{
-                %>
-                <form name="formAdd" action="agregarSabor">
-                    <label class="labRC">Sabor:</label>
-                    <input type="text" id="cSabor" name="sabor" class="txtRC" onkeypress="return validarNom(event)">
-                    <input type="submit" onclick="return validarDatos()" value="Agregar" class="addRC">
+                    <form name="formAdd" action="actualizarTamano">
+                        <label class="labRC">Tamaño:</label>
+                        <input type="text" value="<%=request.getParameter("id")%>" name="idT" style="display: none;">
+                        <input type="text" value="<%=request.getParameter("nom")%>" id="cTamano" name="tamano" class="txtRC" onkeypress="return validarNom(event)">
+                        <input type="submit" onclick="return validarDatos()" value="Actualizar" class="addRC">
+                    </form>
+                    <%
+                    }else{
+                    %>
+                    <form name="formAdd" action="agregarTamano">
+                    <label class="labRC">Tamaño:</label>
+                    <input type="text" id="cTamano" name="tamano" class="txtRC" onkeypress="return validarNom(event)">
+                    <input type="submit" value="Agregar" onclick="return validarDatos()" class="addRC">
                 </form>
                 <%}%>
             </div>
             <form class="form-tabla" name="tablaP">
                 <div class="acciones">
                     <label for="edit"><i class="fas fa-edit icon"></i></label>
-                    <input type="submit" formaction="actSaborRP" value="Edit" class="boton-accion" id="edit">
+                    <input type="submit" formaction="actTamanoRP" value="Edit" class="boton-accion" id="edit">
                     <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
-                    <input type="submit" formaction="eliminarSabor" value="Add" class="boton-accion" id="delete">
+                    <input type="submit" formaction="eliminarTamano" value="Add" class="boton-accion" id="delete">
                 </div>
                 <table class="tabla">
                     <thead class="titulosCol">
                         <tr>
                             <td id="seleccion"></td>
                             <td>ID</td>
-                            <td>Sabor</td>
+                            <td>Tamaño</td>
                         </tr>
                     </thead>
                     <tbody class="registros">
                         <%
-                            Vector<TipoHelado> listaSabores = new TipoHelado().listaSabores();
+                            Vector<Tamano> listaTamanos = new Tamano().listaTamanos();
 
-                    for(TipoHelado sabor : listaSabores){
+                    for(Tamano tamano : listaTamanos){
                         %>
                         <tr>
-                            <td><input type="radio" name="select" value="<%=sabor.getId_tipoH()%>" class="radio-button"></td>
-                            <td><%=sabor.getId_tipoH()%></td>
-                            <td><%=sabor.getTipoH()%></td>
+                            <td><input type="radio" name="select" value="<%=tamano.getId_tam()%>" class="radio-button"></td>
+                            <td><%=tamano.getId_tam()%></td>
+                            <td><%=tamano.getTam()%></td>
                         </tr>
                                     <%
                     }
@@ -83,6 +83,6 @@
             </form>
         </div>
     </div>
-    <script src="./js/validacionCSab.js"></script>
+    <script src="./js/validacionCTam.js"></script>
 </body>
 </html>

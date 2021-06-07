@@ -12,6 +12,50 @@
         <servlet-name>agregarSabor</servlet-name>
         <servlet-class>Vista.agregarSabor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actualizarSabor</servlet-name>
+        <servlet-class>Vista.actualizarSabor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actSaborRP</servlet-name>
+        <servlet-class>Vista.actSaborRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarSabor</servlet-name>
+        <servlet-class>Vista.eliminarSabor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarPresentacion</servlet-name>
+        <servlet-class>Vista.actualizarPresentacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>agregarPresentacion</servlet-name>
+        <servlet-class>Vista.agregarPresentacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarPresentacion</servlet-name>
+        <servlet-class>Vista.eliminarPresentacion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actPresentacionRP</servlet-name>
+        <servlet-class>Vista.actPresentacionRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actTamanoRP</servlet-name>
+        <servlet-class>Vista.actTamanoRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarTamano</servlet-name>
+        <servlet-class>Vista.actualizarTamano</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>agregarTamano</servlet-name>
+        <servlet-class>Vista.agregarTamano</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarTamano</servlet-name>
+        <servlet-class>Vista.eliminarTamano</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarUsu</servlet-name>
         <url-pattern>/registrarUsu</url-pattern>
@@ -23,6 +67,50 @@
     <servlet-mapping>
         <servlet-name>agregarSabor</servlet-name>
         <url-pattern>/agregarSabor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarSabor</servlet-name>
+        <url-pattern>/actualizarSabor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actSaborRP</servlet-name>
+        <url-pattern>/actSaborRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarSabor</servlet-name>
+        <url-pattern>/eliminarSabor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarPresentacion</servlet-name>
+        <url-pattern>/actualizarPresentacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarPresentacion</servlet-name>
+        <url-pattern>/agregarPresentacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarPresentacion</servlet-name>
+        <url-pattern>/eliminarPresentacion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actPresentacionRP</servlet-name>
+        <url-pattern>/actPresentacionRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actTamanoRP</servlet-name>
+        <url-pattern>/actTamanoRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarTamano</servlet-name>
+        <url-pattern>/actualizarTamano</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarTamano</servlet-name>
+        <url-pattern>/agregarTamano</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarTamano</servlet-name>
+        <url-pattern>/eliminarTamano</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

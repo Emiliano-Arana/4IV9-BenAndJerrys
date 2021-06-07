@@ -11,16 +11,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Modelo.TipoHelado;
+import Modelo.Tamano;
 import Control.AccionesAdmin;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Emiliano
  */
-public class agregarSabor extends HttpServlet {
+public class agregarTamano extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,33 +30,33 @@ public class agregarSabor extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            String sabor;
+            String tam;
             
-            sabor = request.getParameter("sabor");
+            tam = request.getParameter("tamano");
             
             AccionesAdmin acc = new AccionesAdmin();
             
-            TipoHelado busc = acc.repetidosSabores(sabor);
+            Tamano busc = acc.repetidosTamanos(tam);
             
                 if(busc==null){
-                    TipoHelado objSab = new TipoHelado();
+                    Tamano objTam = new Tamano();
 
-                    objSab.setTipoH(sabor);
+                    objTam.setTam(tam);
 
-                    int estatus = AccionesAdmin.registrarSabor(objSab);
+                    int estatus = AccionesAdmin.registrarTamano(objTam);
 
 
                     if(estatus > 0){
-                        response.sendRedirect("cSabores.jsp?act=false");
+                        response.sendRedirect("cTamanos.jsp?act=false");
                     }else{
-                        response.sendRedirect("cSabores.jsp?act=false");
+                        response.sendRedirect("cTamanos.jsp?act=false");
                     }
                 }else{
-                    response.sendRedirect("cSabores.jsp?act=false");
+                    response.sendRedirect("cTamanos.jsp?act=false");
                 }
         }
     }
@@ -75,11 +73,7 @@ public class agregarSabor extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(agregarSabor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -93,11 +87,7 @@ public class agregarSabor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(agregarSabor.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

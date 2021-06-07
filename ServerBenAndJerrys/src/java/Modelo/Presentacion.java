@@ -5,6 +5,10 @@
  */
 package Modelo;
 
+import java.util.Vector;
+import Control.Conexion;
+import java.sql.*;
+
 /**
  *
  * @author Emiliano
@@ -32,5 +36,40 @@ public class Presentacion {
         this.presentacion = presentacion;
     }
     
-    
+    public Vector<Presentacion> listaPresentaciones() throws ClassNotFoundException{
+        Vector<Presentacion> listaPresentaciones = new Vector<Presentacion>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from cpresentacion";
+            //querry donde se obtenga a traves de join o con vista
+            ps = con.prepareStatement(q);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Presentacion presentacion = new Presentacion();
+                presentacion.setId_presentacion(rs.getInt("id_presentacion"));
+                presentacion.setPresentacion(rs.getString("tipo_presentacion"));
+                listaPresentaciones.add(presentacion);
+            }
+            
+        }catch(SQLException sq){
+            System.out.println("Error al consultar los productos");
+            System.out.println(sq.getMessage());
+            listaPresentaciones = null;
+        
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("Error no encuentra la clase");
+                System.out.println(e.getMessage());
+            }
+        }
+        return listaPresentaciones;
+    }
 }

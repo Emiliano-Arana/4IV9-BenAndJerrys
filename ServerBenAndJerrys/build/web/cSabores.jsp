@@ -28,18 +28,33 @@
         </header>
         <div class="tablaConsulta">
             <div class="miniAdd">
+                <%
+                boolean act = Boolean.parseBoolean(request.getParameter("act"));
+                
+                if(act){
+                    %>
+                <form name="formAdd" action="actualizarSabor">
+                    <label class="labRC">Sabor:</label>
+                    <input type="text" value="<%=request.getParameter("id")%>" name="idS" style="display: none;">
+                    <input type="text" value="<%=request.getParameter("nom")%>" id="cSabor" name="sabor" class="txtRC" onkeypress="return validarNom(event)">
+                    <input type="submit" onclick="return validarDatos()" value="Actualizar" class="addRC">
+                </form>
+                <%
+                }else{
+                %>
                 <form name="formAdd" action="agregarSabor">
                     <label class="labRC">Sabor:</label>
                     <input type="text" id="cSabor" name="sabor" class="txtRC" onkeypress="return validarNom(event)">
                     <input type="submit" onclick="return validarDatos()" value="Agregar" class="addRC">
                 </form>
+                <%}%>
             </div>
             <form class="form-tabla" name="tablaP">
                 <div class="acciones">
                     <label for="edit"><i class="fas fa-edit icon"></i></label>
-                    <input type="submit" value="Edit" class="boton-accion" id="edit">
+                    <input type="submit" formaction="actSaborRP" value="Edit" class="boton-accion" id="edit">
                     <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
-                    <input type="submit" value="Add" class="boton-accion" id="delete">
+                    <input type="submit" formaction="eliminarSabor" value="Add" class="boton-accion" id="delete">
                 </div>
                 <table class="tabla">
                     <thead class="titulosCol">
@@ -56,7 +71,7 @@
                     for(TipoHelado sabor : listaSabores){
                         %>
                         <tr>
-                            <td><input type="radio" name="sabor" value="" class="radio-button"></td>
+                            <td><input type="radio" name="select" value="<%=sabor.getId_tipoH()%>" class="radio-button"></td>
                             <td><%=sabor.getId_tipoH()%></td>
                             <td><%=sabor.getTipoH()%></td>
                         </tr>
