@@ -451,6 +451,158 @@ public class AccionesAdmin {
         
     }
     
+    //Catalogo Cantidades
+    
+    public static int registrarCantidad(Cantidad cant){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "insert into ccantidad(valor_cantidad,unidad_cantidad) "
+                    + "values(?,?)";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(cant.getValor()));
+            ps.setString(2, cant.getUnidad());
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Registro de empleado exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al registar al empleado");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Cantidad repetidosCantidades(String val, String u) throws ClassNotFoundException{
+        Cantidad objCant= null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from ccantidad where valor_cantidad = ? AND unidad_cantidad = ?";
+            ps = con.prepareStatement(q);
+            
+            ps.setString(1, val);
+            ps.setString(2, u);
+            
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objCant = new Cantidad();
+                objCant.setId_cant(rs.getInt("id_cantidad"));
+                objCant.setValor(Integer.parseInt(rs.getString("valor_cantidad")));
+                objCant.setUnidad(rs.getString("unidad_cantidad"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objCant = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objCant;
+    }
+    
+    public static int eliminarCantidad(int cant){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "delete from ccantidad where id_cantidad = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(cant));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Eliminar cantidad exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al eliminar cantidad");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Cantidad recogerCantidad(int id) throws ClassNotFoundException{
+        Cantidad objCant = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from ccantidad where id_cantidad = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, String.valueOf(id));
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objCant = new Cantidad();
+                objCant.setId_cant(rs.getInt("id_cantidad"));
+                objCant.setValor(rs.getInt("valor_cantidad"));
+                objCant.setUnidad(rs.getString("unidad_cantidad"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objCant = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objCant;
+    }
+    
+    public static int actualizarCantidad(Cantidad cant){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "update ccantidad set valor_cantidad = ?, unidad_cantidad = ?"
+                    + " where id_cantidad = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(cant.getValor()));
+            ps.setString(2, cant.getUnidad());
+            ps.setString(3, String.valueOf(cant.getId_cant()));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Actualizacion cantidad exitosa");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al actualizar el cantidad");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
     //Catalogo Promociones
     
     public static int registrarPromocion(Promocion promo){
@@ -595,5 +747,4 @@ public class AccionesAdmin {
         return estatus;
         
     }
-    
 }

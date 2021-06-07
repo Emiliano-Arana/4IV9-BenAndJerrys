@@ -5,6 +5,13 @@
  */
 package Modelo;
 
+import Control.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Vector;
+
 /**
  *
  * @author Emiliano
@@ -40,4 +47,41 @@ public class Cantidad {
         this.unidad = unidad;
     }    
     
+    public Vector<Cantidad> listaCantidades() throws ClassNotFoundException{
+        Vector<Cantidad> listaCantidades = new Vector<Cantidad>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from ccantidad";
+            //querry donde se obtenga a traves de join o con vista
+            ps = con.prepareStatement(q);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Cantidad cant = new Cantidad();
+                cant.setId_cant(rs.getInt("id_cantidad"));
+                cant.setValor(rs.getInt("valor_cantidad"));
+                cant.setUnidad(rs.getString("unidad_cantidad"));
+                listaCantidades.add(cant);
+            }
+            
+        }catch(SQLException sq){
+            System.out.println("Error al consultar los productos");
+            System.out.println(sq.getMessage());
+            listaCantidades = null;
+        
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("Error no encuentra la clase");
+                System.out.println(e.getMessage());
+            }
+        }
+        return listaCantidades;
+    }
 }
