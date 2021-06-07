@@ -1,6 +1,6 @@
 function validarNom(e){
     var teclado = (document.all)?e.keyCode:e.which;
-    var patron = /[A-Za-z%-]/;
+    var patron = /[0-9a-z%-]/;
     var prueba = String.fromCharCode(teclado);
     return patron.test(prueba);
 }
@@ -10,7 +10,7 @@ function validarDatos(){
 
     var promo = document.getElementById('cPromo').value;
 
-    var patNom = /[A-Za-z%-]/;
+    var patNom = /[0-9a-z%-]/;
 
     if(promo.length<1){
         verif = false;

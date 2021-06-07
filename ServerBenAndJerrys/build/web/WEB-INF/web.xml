@@ -56,6 +56,22 @@
         <servlet-name>eliminarTamano</servlet-name>
         <servlet-class>Vista.eliminarTamano</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>actPromocionRP</servlet-name>
+        <servlet-class>Vista.actPromocionRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarPromocion</servlet-name>
+        <servlet-class>Vista.actualizarPromocion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>agregarPromocion</servlet-name>
+        <servlet-class>Vista.agregarPromocion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarPromocion</servlet-name>
+        <servlet-class>Vista.eliminarPromocion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarUsu</servlet-name>
         <url-pattern>/registrarUsu</url-pattern>
@@ -111,6 +127,22 @@
     <servlet-mapping>
         <servlet-name>eliminarTamano</servlet-name>
         <url-pattern>/eliminarTamano</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actPromocionRP</servlet-name>
+        <url-pattern>/actPromocionRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarPromocion</servlet-name>
+        <url-pattern>/actualizarPromocion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarPromocion</servlet-name>
+        <url-pattern>/agregarPromocion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarPromocion</servlet-name>
+        <url-pattern>/eliminarPromocion</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

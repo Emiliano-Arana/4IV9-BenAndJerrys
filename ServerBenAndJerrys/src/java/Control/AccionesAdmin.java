@@ -451,4 +451,149 @@ public class AccionesAdmin {
         
     }
     
+    //Catalogo Promociones
+    
+    public static int registrarPromocion(Promocion promo){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "insert into cpromocion(tipo_promocion) "
+                    + "values(?)";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, promo.getPromocion());
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Registro de empleado exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al registar al empleado");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Promocion repetidosPromociones(String promo) throws ClassNotFoundException{
+        Promocion objPromo = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from cpromocion where tipo_promocion = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, promo);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objPromo = new Promocion();
+                objPromo.setId_promocion(rs.getInt("id_promocion"));
+                objPromo.setPromocion(rs.getString("tipo_promocion"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objPromo = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objPromo;
+    }
+    
+    public static int eliminarPromocion(int promo){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "delete from cpromocion where id_promocion = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(promo));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Eliminar promocion exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al eliminar promocion");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Promocion recogerPromocion(int id) throws ClassNotFoundException{
+        Promocion objPromo = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from cpromocion where id_promocion = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, String.valueOf(id));
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objPromo = new Promocion();
+                objPromo.setId_promocion(rs.getInt("id_promocion"));
+                objPromo.setPromocion(rs.getString("tipo_promocion"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objPromo = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objPromo;
+    }
+    
+    public static int actualizarPromocion(Promocion promo){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "update cpromocion set tipo_promocion = ?"
+                    + " where id_promocion = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, promo.getPromocion());
+            ps.setString(2, String.valueOf(promo.getId_promocion()));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Actualizacion promocion exitosa");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al actualizar el promocion");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
 }
