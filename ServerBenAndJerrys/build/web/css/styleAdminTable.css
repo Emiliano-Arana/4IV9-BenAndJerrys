@@ -1,0 +1,207 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/333/037/non_2x/hand-drawn-ice-cream-seamless-pattern-vector.jpg);
+}
+
+.main-container{
+    padding-top: 110px;
+}
+
+.tablaConsulta{
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.form-tabla{
+    width: 100%;
+}
+
+.tabla{
+    border-collapse: collapse;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 900px;
+}
+
+.titulosCol tr{
+    background-color: rgb(146, 116, 78);
+    color: rgb(255, 255, 255);
+    text-align: left;
+    font-weight: bold;
+}
+
+#seleccion{
+    max-width: 10px;
+}
+
+.tabla th, .tabla td{
+    padding: .6rem .8rem;
+}
+
+.registros {
+    overflow: scroll;
+    max-height: 10px;
+}
+
+.registros tr{
+    border-bottom: 1px solid #dddddd;
+    background-color: rgb(255, 255, 255);
+}
+
+.registros tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.registros tr:last-of-type{
+    border: none;
+}
+
+.registros tr:hover {
+    color: rgb(146, 116, 78);
+}
+
+.radio-button{
+    cursor: pointer;
+}
+
+.boton-accion{
+    display: none;
+}
+
+.acciones{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.836);
+}
+
+.icon{
+    padding: .5rem 1rem;
+    font-size: 1.3rem;
+    color: rgb(146, 116, 78);
+    cursor: pointer;
+}
+
+.icon:hover{
+    color: rgb(190, 153, 103);
+    position: relative;
+    bottom: 2px;
+}
+
+.iconB{
+    font-size: 1rem;
+    padding: 0 .5rem 0 0;
+    color: rgb(146, 116, 78);
+    border-bottom: 1px solid rgb(146, 116, 78);
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.buscarContainer{
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    position: relative;
+    top: .35rem;
+    margin-left: auto;
+}
+
+.buscar{
+    height: 1.5rem;
+    outline: none;
+    background-color: #dddddd00;
+    font-size: 1rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid rgb(146, 116, 78);
+}
+
+.filtros{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.836);
+    padding: .3rem 1rem;
+    justify-content: center;
+}
+
+.filtroU{
+    font-size: 1.1rem;
+    margin: 0 2rem;
+}
+
+.opciones{
+    background-color: #dddddd00;
+    font-size: 1.1rem;
+    padding: .3rem;
+    color: rgb(146, 116, 78);
+    border-bottom: 1px solid rgb(146, 116, 78);
+    outline: none;
+}
+
+.miniAdd{
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.fomAdd{
+    background-color: rgb(190, 153, 103);
+}
+
+.labRC{
+    color: rgb(146, 116, 78);
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .3rem;
+}
+
+.txtRC{
+    outline: none;
+    border-bottom: 2px solid rgb(146, 116, 78);
+    font-size: 1rem;
+    padding: .3rem;
+    width: 100px;
+    margin-right: 20px;
+    color: rgb(110, 87, 57);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.addRC{
+    padding: .5rem;
+    font-family: .9rem;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgb(146, 116, 78);
+}
+
+.addRC:hover{
+    background-color: rgb(110, 88, 59);
+    cursor: pointer;
+}
+
+.return{
+    font-size: 1.4rem;
+    color: #dddddd;
+    text-decoration: underline;
+    padding-top: 18px;
+}
+
+.return:hover{
+    color: #ffffff;
+}
+
+#buscarP{
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .disappear{
+        display: none;
+    }
+}

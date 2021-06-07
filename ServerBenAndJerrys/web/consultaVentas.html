@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <link rel="stylesheet" href="./css/styleAdminTable.css">
+    <title>Consulta Ventas</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <nav class="nav">
+              <a href="index.html" class="logo nav-link"><img src="./img/logo-small.png" ></a>
+              <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="nav-menu">
+                <li id="tre" class="btn btn--4">
+                  <a href="adminProductos.html" class="nav-menu-link">Productos</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                  <a href="adminUsu.html" class="nav-menu-link">Usuarios</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                  <a href="#" class="nav-menu-link">Ventas</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                    <a href="menuCatalogos.html" class="nav-menu-link">Catalogos</a>
+                  </li>
+              </ul>
+            </nav>
+        </header>
+        <div class="tablaConsulta">
+            <form class="form-tabla" name="tablaP">
+                <div class="acciones">
+                    <div style="margin-bottom: 10px;" class="buscarContainer">
+                        <form id="buscarID">
+                            <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="buscarID" onkeypress="return validarNum(event)" id="buscarBD" name="busqueda" placeholder="Ingrese el ID" type="text" class="buscar">
+                            <input type="submit" onclick="return validarDatos()" id="buscarP">
+                        </form>
+                    </div>
+                </div>
+                <table class="tabla">
+                    <thead class="titulosCol">
+                        <tr>
+                            <td id="seleccion"></td>
+                            <td>ID</td>
+                            <td>Sabor</td>
+                            <td class="disappear">Tamaño</td>
+                            <td class="disappear">Presentacion</td>
+                            <td>Ventas</td>
+                        </tr>
+                    </thead>
+                    <tbody class="registros">
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                            <td class="disappear">Jumbo</td>
+                            <td class="disappear">Cono</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                            <td class="disappear">Jumbo</td>
+                            <td class="disappear">Cono</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                            <td class="disappear">Jumbo</td>
+                            <td class="disappear">Cono</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                            <td class="disappear">Jumbo</td>
+                            <td class="disappear">Cono</td>
+                            <td>100</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/validarBusquedasID.js"></script>
+</body>
+</html>
