@@ -367,4 +367,88 @@ public class AccionesAdmin {
         }
         return objTam;
     }
+
+    public static int eliminarTamano(int tam){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "delete from ctamano where id_tamano = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(tam));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Eliminar tamano exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al eliminar tamano");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+
+    public Tamano recogerTamano(int id) throws ClassNotFoundException{
+        Tamano objTam = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from ctamano where id_tamano = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, String.valueOf(id));
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objTam = new Tamano();
+                objTam.setId_tam(rs.getInt("id_tamano"));
+                objTam.setTam(rs.getString("nombre_tamano"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objTam = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objTam;
+    }
+    
+    public static int actualizarTamano(Tamano tam){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "update ctamano set nombre_tamano = ?"
+                    + " where id_tamano = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, tam.getTam());
+            ps.setString(2, String.valueOf(tam.getId_tam()));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Actualizacion tamano exitosa");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al actualizar el tamano");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
 }

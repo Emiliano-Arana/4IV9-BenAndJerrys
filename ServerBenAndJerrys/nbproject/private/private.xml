@@ -3,24 +3,39 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/registro.html</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/AccionesInv.java</file>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarSabor.java</file>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/Conexion.java</file>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Usuario.java</file>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/AccionesAdmin.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Tamano.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/inicioSesion.html</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/conocenos.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Presentacion.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Alcaldia.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarTamano.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/TipoHelado.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarPresentacion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actSaborRP.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/productos.html</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cSabores.jsp</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/index.html</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/registrarUsu.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/TipoTarjeta.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarPresentacion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cPresentaciones.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/registro.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarSabor.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/Conexion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Usuario.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/AccionesAdmin.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actPresentacionRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actTamanoRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarPresentacion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cTamanos.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarSabor.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/iniciarSesion.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cCantidades.html</file>
-            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cSabores.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarSabor.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarTamano.java</file>
             <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/menuCatalogos.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarTamano.java</file>
         </group>
     </open-files>
 </project-private>
