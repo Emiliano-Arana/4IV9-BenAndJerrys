@@ -10,7 +10,7 @@ package Modelo;
  * @author Emiliano
  */
 public class Producto {
-    private int id_producto,id_Tipo,id_promocion,id_cant,id_tam,id_presentacion;
+    private int id_producto,id_Tipo,id_promocion,id_cant,id_tam,id_presentacion,stock;
     private float precio;
 
     public Producto() {
@@ -70,6 +70,14 @@ public class Producto {
 
     public void setPrecio(float precio) {
         this.precio = precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
     }
     
     
