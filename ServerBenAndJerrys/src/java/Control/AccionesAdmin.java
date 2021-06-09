@@ -1012,7 +1012,6 @@ public class AccionesAdmin {
         }catch(Exception ed){
             System.out.println("Error al eliminar promocion");
             System.out.println(ed.getMessage());
-        
         }
         return estatus;
         
