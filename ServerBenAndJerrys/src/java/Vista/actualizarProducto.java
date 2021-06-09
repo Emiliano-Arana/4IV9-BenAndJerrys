@@ -11,17 +11,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Modelo.Usuario;
-import Control.AccionesInv;
+import Control.AccionesAdmin;
+import Modelo.Producto;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Emiliano
  */
-public class iniciarSesion extends HttpServlet {
+public class actualizarProducto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,37 +36,37 @@ public class iniciarSesion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String id,id_sab,id_cant,id_tam,id_pre,id_promo,precio,stock;
             
-            String usu,pass;
+            id = request.getParameter("idP");
+            id_sab = request.getParameter("sabor");
+            id_cant = request.getParameter("cantidad");
+            id_tam = request.getParameter("tamano");
+            id_pre = request.getParameter("presentacion");
+            id_promo = request.getParameter("promocion");
+            precio = request.getParameter("precio");
+            stock = request.getParameter("stock");
             
-            usu = request.getParameter("usu");
-            pass = request.getParameter("pass");
+            AccionesAdmin acc = new AccionesAdmin();
             
-            Usuario objUsu = new Usuario();
-            
-            if(usu.equals("adminBenJerry")&&pass.equals("BaJs3159")){
-                
-                objUsu.setUsu(usu);
-                objUsu.setPass(pass);
-                HttpSession sesionusu = request.getSession(true);
-                sesionusu.setAttribute("usuario", objUsu);
-                response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
-                
-            }else{
-                AccionesInv acc = new AccionesInv();
-                objUsu = acc.verificarUsuario(usu,pass);
+                    Producto objPro = new Producto();
 
+                    objPro.setId_producto(Integer.parseInt(id));
+                    objPro.setId_Tipo(Integer.parseInt(id_sab));
+                    objPro.setId_cant(Integer.parseInt(id_cant));
+                    objPro.setId_tam(Integer.parseInt(id_tam));
+                    objPro.setId_presentacion(Integer.parseInt(id_pre));
+                    objPro.setId_promocion(Integer.parseInt(id_promo));
+                    objPro.setPrecio(Float.parseFloat(precio));
+                    objPro.setStock(Integer.parseInt(stock));
 
-                if(objUsu!=null){
-                    HttpSession sesionusu = request.getSession(true);
-                    sesionusu.setAttribute("usuario", objUsu);
-                    response.sendRedirect("gestionarUsu.html");
+                    int estatus = AccionesAdmin.actualizarProducto(objPro);
 
-                }else{
-                    //el usuario no esta registrado
-                    response.sendRedirect("inicioSesion.html");
-                }
-            }
+                    if(estatus > 0){
+                        response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
+                    }else{
+                        response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
+                    }
         }
     }
 
@@ -86,7 +85,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(actualizarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -104,7 +103,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(actualizarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

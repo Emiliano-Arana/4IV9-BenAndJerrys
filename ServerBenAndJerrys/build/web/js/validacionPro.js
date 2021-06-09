@@ -20,9 +20,19 @@ function validarDatos(){
 
     var stock = document.getElementById('stockH').value;
     var precio = document.getElementById('precioH').value;
+    var sab = document.getElementById('saborH').value;
+    var cant = document.getElementById('cantidadH').value;
+    var tam = document.getElementById('tamanoH').value;
+    var pres = document.getElementById('presentacionH').value;
+    var promo = document.getElementById('promocionH').value;
 
     var patNum = /[0-9]/;
     var patNumF = /[0-9.]/;
+    
+    if(sab=="-"||cant=="-"||tam=="-"||pres=="-"||promo=="-"){
+        verif = false;
+        alert('No selecciono uno o varios catalogos');
+    }
 
     if(stock.length<1){
         verif = false;
@@ -39,7 +49,7 @@ function validarDatos(){
         document.getElementById('errPrecio').innerHTML = "*Este campo es obligatorio";
     }
 
-    if(precio.length>7){
+    if(precio.length>5){
         verif = false;
         document.getElementById('errPrecio').innerHTML= "*El maximo de caracteres es de 7";
     }

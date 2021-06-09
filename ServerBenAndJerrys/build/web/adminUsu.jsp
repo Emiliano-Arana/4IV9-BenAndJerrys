@@ -1,6 +1,15 @@
+<%-- 
+    Document   : adminUsu.jsp
+    Created on : Jun 7, 2021, 4:13:32 PM
+    Author     : Emiliano
+--%>
+
+<%@page import="java.util.Vector"%>
+<%@page import="Modelo.Usuario"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+    <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +28,7 @@
               </button>
               <ul class="nav-menu">
                 <li id="tre" class="btn btn--4">
-                  <a href="adminProductos.html" class="nav-menu-link">Productos</a>
+                  <a href="adminProductos.jsp?busc=false&filt=false" class="nav-menu-link">Productos</a>
                 </li>
                 <li id="tre" class="btn btn--4">
                   <a href="#" class="nav-menu-link">Usuarios</a>
@@ -34,17 +43,17 @@
             </nav>
         </header>
         <div class="tablaConsulta">
-            <form class="form-tabla" name="tablaP">
+            <form id="buscarID" action="buscarIDusu">
+            </form>
+            <form class="form-tabla" name="tablaP" id="tableU">
                 <div class="acciones">
                     <label for="edit"><i class="fas fa-edit icon"></i></label>
-                    <input type="submit" value="Edit" class="boton-accion" id="edit">
+                    <input type="submit" formaction="actUsuRP" value="Edit" class="boton-accion" id="edit">
                     <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
-                    <input type="submit" value="Add" class="boton-accion" id="delete">
+                    <input type="submit" formaction="eliminarUsuAdmin" value="Add" class="boton-accion" id="delete">
                     <div class="buscarContainer">
-                        <form id="buscarID">
-                            <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="buscarID" onkeypress="return validarNum(event)" id="buscarBD" name="busqueda" placeholder="Ingrese el ID" type="text" class="buscar">
-                            <input type="submit" onclick="return validarDatos()" id="buscarP">
-                        </form>
+                        <label for="buscarP"><i class="fas fa-search iconB"></i></label><input form="buscarID" onkeypress="return validarNum(event)" id="buscarBD" name="busqueda" placeholder="Ingrese el ID" type="text" class="buscar">
+                        <input form="buscarID" type="submit" onclick="return validarDatos()" id="buscarP">
                     </div>
                 </div>
                 <table class="tabla">
@@ -57,30 +66,28 @@
                         </tr>
                     </thead>
                     <tbody class="registros">
+                        <%if(Boolean.parseBoolean(request.getParameter("busc"))){
+                            %>
+                            <td><input type="radio" name="select" value="<%=request.getParameter("idusu")%>" class="radio-button"></td>
+                            <td><%=request.getParameter("idusu")%></td>
+                            <td><%=request.getParameter("nomusu")%></td>
+                            <td><%=request.getParameter("passusu")%></td>
+                        <%
+                        }else{
+                            Vector<Usuario> listaUsu = new Usuario().listaUsu();
+
+                    for(Usuario usu : listaUsu){
+                        %>
                         <tr>
-                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
-                            <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
+                            <td><input type="radio" name="select" value="<%=usu.getId_usu()%>" class="radio-button"></td>
+                            <td><%=usu.getId_usu()%></td>
+                            <td><%=usu.getUsu()%></td>
+                            <td><%=usu.getPass()%></td>
                         </tr>
-                        <tr>
-                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
-                            <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
-                            <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
-                            <td>1</td>
-                            <td>PepitoFumaMota</td>
-                            <td>12345</td>
-                        </tr>
+                                    <%
+                        }
+                    }
+            %>
                     </tbody>
                 </table>
             </form>

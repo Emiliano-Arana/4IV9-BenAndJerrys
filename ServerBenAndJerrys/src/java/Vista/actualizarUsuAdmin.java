@@ -11,17 +11,16 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import Control.AccionesAdmin;
 import Modelo.Usuario;
-import Control.AccionesInv;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Emiliano
  */
-public class iniciarSesion extends HttpServlet {
+public class actualizarUsuAdmin extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,37 +36,27 @@ public class iniciarSesion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            String pass,id,usu;
             
-            String usu,pass;
-            
+            id = request.getParameter("idU");
             usu = request.getParameter("usu");
             pass = request.getParameter("pass");
             
-            Usuario objUsu = new Usuario();
+            AccionesAdmin acc = new AccionesAdmin();
             
-            if(usu.equals("adminBenJerry")&&pass.equals("BaJs3159")){
-                
-                objUsu.setUsu(usu);
-                objUsu.setPass(pass);
-                HttpSession sesionusu = request.getSession(true);
-                sesionusu.setAttribute("usuario", objUsu);
-                response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
-                
-            }else{
-                AccionesInv acc = new AccionesInv();
-                objUsu = acc.verificarUsuario(usu,pass);
+                    Usuario objUsu = new Usuario();
 
+                    objUsu.setId_usu(Integer.parseInt(id));
+                    objUsu.setUsu(usu);
+                    objUsu.setPass(pass);
 
-                if(objUsu!=null){
-                    HttpSession sesionusu = request.getSession(true);
-                    sesionusu.setAttribute("usuario", objUsu);
-                    response.sendRedirect("gestionarUsu.html");
+                    int estatus = AccionesAdmin.actualizarUsu(objUsu);
 
-                }else{
-                    //el usuario no esta registrado
-                    response.sendRedirect("inicioSesion.html");
-                }
-            }
+                    if(estatus > 0){
+                        response.sendRedirect("adminUsu.jsp?busc=false");
+                    }else{
+                        response.sendRedirect("adminUsu.jsp?busc=false");
+                    }
         }
     }
 
@@ -86,7 +75,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(actualizarUsuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -104,7 +93,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(actualizarUsuAdmin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

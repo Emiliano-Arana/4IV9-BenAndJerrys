@@ -88,6 +88,46 @@
         <servlet-name>eliminarCantidad</servlet-name>
         <servlet-class>Vista.eliminarCantidad</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>buscarIDusu</servlet-name>
+        <servlet-class>Vista.buscarIDusu</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actUsuRP</servlet-name>
+        <servlet-class>Vista.actUsuRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarUsuAdmin</servlet-name>
+        <servlet-class>Vista.eliminarUsuAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarUsuAdmin</servlet-name>
+        <servlet-class>Vista.actualizarUsuAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>agregarProducto</servlet-name>
+        <servlet-class>Vista.agregarProducto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actProductoRP</servlet-name>
+        <servlet-class>Vista.actProductoRP</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>actualizarProducto</servlet-name>
+        <servlet-class>Vista.actualizarProducto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarProducto</servlet-name>
+        <servlet-class>Vista.eliminarProducto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>buscarIDproducto</servlet-name>
+        <servlet-class>Vista.buscarIDproducto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>filtProductos</servlet-name>
+        <servlet-class>Vista.filtProductos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarUsu</servlet-name>
         <url-pattern>/registrarUsu</url-pattern>
@@ -175,6 +215,46 @@
     <servlet-mapping>
         <servlet-name>eliminarCantidad</servlet-name>
         <url-pattern>/eliminarCantidad</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscarIDusu</servlet-name>
+        <url-pattern>/buscarIDusu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actUsuRP</servlet-name>
+        <url-pattern>/actUsuRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarUsuAdmin</servlet-name>
+        <url-pattern>/eliminarUsuAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarUsuAdmin</servlet-name>
+        <url-pattern>/actualizarUsuAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>agregarProducto</servlet-name>
+        <url-pattern>/agregarProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actProductoRP</servlet-name>
+        <url-pattern>/actProductoRP</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>actualizarProducto</servlet-name>
+        <url-pattern>/actualizarProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarProducto</servlet-name>
+        <url-pattern>/eliminarProducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscarIDproducto</servlet-name>
+        <url-pattern>/buscarIDproducto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>filtProductos</servlet-name>
+        <url-pattern>/filtProductos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

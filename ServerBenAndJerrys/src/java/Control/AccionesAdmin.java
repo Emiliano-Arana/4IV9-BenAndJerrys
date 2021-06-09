@@ -16,6 +16,337 @@ import java.util.*;
 
 public class AccionesAdmin {
     
+    //CRUD Producto
+    
+    public static int registrarProducto(Producto pro){
+        int estatus = 0;
+        try{
+            
+            Connection con = Conexion.getConection();
+            String q = "insert into mproducto(id_tipohelado,id_promocion,id_cantidad,id_tamano,id_presentacion,precio_producto,stock) "
+                    + "values(?,?,?,?,?,?,?)";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(pro.getId_Tipo()));
+            ps.setString(2, String.valueOf(pro.getId_promocion()));
+            ps.setString(3, String.valueOf(pro.getId_cant()));
+            ps.setString(4, String.valueOf(pro.getId_tam()));
+            ps.setString(5, String.valueOf(pro.getId_presentacion()));
+            ps.setString(6, String.valueOf(pro.getPrecio()));
+            ps.setString(7, String.valueOf(pro.getStock()));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Registro de empleado exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al registar al empleado");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Producto repetidosProductos(String sab,String tam, String pre) throws ClassNotFoundException{
+        Producto objPro = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from mproducto where id_tipohelado = ? AND id_tamano = ? AND id_presentacion = ?";
+            ps = con.prepareStatement(q);
+            
+            ps.setString(1, sab);
+            ps.setString(2, tam);
+            ps.setString(3, pre);
+            
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objPro = new Producto();
+                objPro.setId_producto(rs.getInt("id_tipohelado"));
+                objPro.setId_Tipo(rs.getInt("id_tipohelado"));
+                objPro.setId_cant(rs.getInt("id_cantidad"));
+                objPro.setId_tam(rs.getInt("id_tamano"));
+                objPro.setId_presentacion(rs.getInt("id_presentacion"));
+                objPro.setId_promocion(rs.getInt("id_promocion"));
+                objPro.setPrecio(rs.getFloat("precio_producto"));                  
+                objPro.setStock(rs.getInt("stock"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objPro = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objPro;
+    }
+    
+    public static int eliminarProducto(int pro){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "delete from mproducto where id_producto = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(pro));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Eliminar producto exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al eliminar producto");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Producto recogerProducto(int id) throws ClassNotFoundException{
+        Producto objPro = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from mproducto where id_producto = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, String.valueOf(id));
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objPro = new Producto();
+                objPro.setId_producto(rs.getInt("id_producto"));
+                objPro.setId_Tipo(rs.getInt("id_tipohelado"));
+                objPro.setId_cant(rs.getInt("id_cantidad"));
+                objPro.setId_tam(rs.getInt("id_tamano"));
+                objPro.setId_presentacion(rs.getInt("id_presentacion"));
+                objPro.setId_promocion(rs.getInt("id_promocion"));
+                objPro.setPrecio(rs.getFloat("precio_producto"));                  
+                objPro.setStock(rs.getInt("stock"));
+                break;
+            }
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al producto");
+            System.out.println(sq.getMessage());
+            objPro = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objPro;
+    }
+    
+    public static int actualizarProducto(Producto pro){
+        int estatus = 0;
+        boolean bool = false;
+        try{
+            AccionesAdmin acc = new AccionesAdmin();
+            
+            Producto rec = acc.recogerProducto(pro.getId_producto());
+             
+            if(rec.getId_Tipo()==pro.getId_Tipo()&rec.getId_tam()==pro.getId_tam()&rec.getId_presentacion()==pro.getId_presentacion()){
+                bool = true;
+            }else{
+                Producto rep = acc.repetidosProductos(String.valueOf(pro.getId_Tipo()),String.valueOf(pro.getId_tam()),String.valueOf(pro.getId_presentacion()));
+                if(rep==null){
+                    bool = true;
+                }
+            }
+            
+            if(bool){
+                Connection con = Conexion.getConection();
+                String q = "update mproducto set id_tipohelado = ?, id_promocion = ?, id_cantidad = ?, id_tamano = ?, id_presentacion = ?, precio_producto = ?, stock = ?"
+                        + " where id_producto = ?";
+
+                PreparedStatement ps = con.prepareStatement(q);
+
+                ps.setString(1, String.valueOf(pro.getId_Tipo()));
+                ps.setString(2, String.valueOf(pro.getId_promocion()));
+                ps.setString(3, String.valueOf(pro.getId_cant()));
+                ps.setString(4, String.valueOf(pro.getId_tam()));
+                ps.setString(5, String.valueOf(pro.getId_presentacion()));
+                ps.setString(6, String.valueOf(pro.getPrecio()));
+                ps.setString(7, String.valueOf(pro.getStock()));
+                ps.setString(8, String.valueOf(pro.getId_producto()));
+
+                estatus = ps.executeUpdate();
+                System.out.println("Actualizacion producto exitosa");
+                con.close();
+            }
+        }catch(Exception ed){
+            System.out.println("Error al actualizar el producto");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    //CRUD Usuario
+    
+    public static int eliminarUsu(int id){
+        int estatus = 0;
+        try{
+            Connection con = Conexion.getConection();
+            String q = "delete from musuario where id_usuario = ?";
+            
+            PreparedStatement ps = con.prepareStatement(q);
+            
+            ps.setString(1, String.valueOf(id));
+            
+            estatus = ps.executeUpdate();
+            System.out.println("Eliminar usu exitoso");
+            con.close();
+        }catch(Exception ed){
+            System.out.println("Error al eliminar usu");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+    
+    public Usuario repetidosUsu(String usu) throws ClassNotFoundException{
+        Usuario objUsu = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from musuario where user_usuario = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1,usu);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objUsu = new Usuario();
+                objUsu.setId_usu(rs.getInt("id_usuario"));
+                objUsu.setUsu(rs.getString("user_usuario"));
+                objUsu.setPass(rs.getString("pass_usuario"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objUsu = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objUsu;
+    }
+
+    public Usuario recogerUsu(int id) throws ClassNotFoundException{
+        Usuario objUsu = null;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from musuario where id_usuario = ?";
+            ps = con.prepareStatement(q);
+            ps.setString(1, String.valueOf(id));
+            rs = ps.executeQuery();
+            while(rs.next()){
+                objUsu = new Usuario();
+                objUsu.setId_usu(rs.getInt("id_usuario"));
+                objUsu.setUsu(rs.getString("user_usuario"));
+                objUsu.setPass(rs.getString("pass_usuario"));
+                break;
+            }
+        
+        }catch(SQLException sq){
+            System.out.println("Error al verificar al usuario");
+            System.out.println(sq.getMessage());
+            objUsu = null;
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("No encontro la clase");
+                System.out.println(e.getMessage());
+            
+            }
+        }
+        return objUsu;
+    }
+    
+    public static int actualizarUsu(Usuario usu){
+        int estatus = 0;
+        boolean bool = false;
+        try{
+            
+            AccionesAdmin acc = new AccionesAdmin();
+            
+            Usuario rec = acc.recogerUsu(usu.getId_usu());
+             
+            if(rec.getId_usu()==usu.getId_usu()){
+                bool = true;
+            }else{
+                Usuario rep = acc.repetidosUsu(String.valueOf(usu.getId_usu()));
+                if(rep==null){
+                    bool = true;
+                }
+            }
+            
+            if(bool){
+                Connection con = Conexion.getConection();
+                String q = "update musuario set user_usuario = ?, pass_usuario = ?"
+                        + " where id_usuario = ?";
+
+                PreparedStatement ps = con.prepareStatement(q);
+
+                ps.setString(1, usu.getUsu());
+                ps.setString(2, usu.getPass());
+                ps.setString(3, String.valueOf(usu.getId_usu()));
+
+                estatus = ps.executeUpdate();
+                System.out.println("Actualizacion usu exitosa");
+                con.close();
+            }
+        }catch(Exception ed){
+            System.out.println("Error al actualizar el usu");
+            System.out.println(ed.getMessage());
+        
+        }
+        return estatus;
+        
+    }
+
     //Catalogo Sabores
     
     public static int registrarSabor(TipoHelado sabor){

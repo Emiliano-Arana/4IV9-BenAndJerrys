@@ -12,16 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Modelo.Usuario;
-import Control.AccionesInv;
+import Control.AccionesAdmin;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Emiliano
  */
-public class iniciarSesion extends HttpServlet {
+public class buscarIDusu extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,36 +36,29 @@ public class iniciarSesion extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-            String usu,pass;
-            
-            usu = request.getParameter("usu");
-            pass = request.getParameter("pass");
-            
-            Usuario objUsu = new Usuario();
-            
-            if(usu.equals("adminBenJerry")&&pass.equals("BaJs3159")){
-                
-                objUsu.setUsu(usu);
-                objUsu.setPass(pass);
-                HttpSession sesionusu = request.getSession(true);
-                sesionusu.setAttribute("usuario", objUsu);
-                response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
-                
-            }else{
-                AccionesInv acc = new AccionesInv();
-                objUsu = acc.verificarUsuario(usu,pass);
+            try{
+                String id;
 
+                id = request.getParameter("busqueda");
 
-                if(objUsu!=null){
-                    HttpSession sesionusu = request.getSession(true);
-                    sesionusu.setAttribute("usuario", objUsu);
-                    response.sendRedirect("gestionarUsu.html");
+                AccionesAdmin acc = new AccionesAdmin();
 
-                }else{
-                    //el usuario no esta registrado
-                    response.sendRedirect("inicioSesion.html");
-                }
+                Usuario busc = acc.recogerUsu(Integer.parseInt(id));
+
+                    if(busc!=null){
+                        String idU,usu,pass;
+
+                        idU = String.valueOf(busc.getId_usu());
+                        usu = busc.getUsu();
+                        pass = busc.getPass();
+
+                        response.sendRedirect("adminUsu.jsp?busc=true&idusu="+idU+"&nomusu="+usu+"&passusu="+pass);
+
+                    }else{
+                        response.sendRedirect("adminUsu.jsp?busc=false");
+                    }
+            }catch(Exception e){
+                response.sendRedirect("adminUsu.jsp?busc=false");
             }
         }
     }
@@ -86,7 +78,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(buscarIDusu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -104,7 +96,7 @@ public class iniciarSesion extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(buscarIDusu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

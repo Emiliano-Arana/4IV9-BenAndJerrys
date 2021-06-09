@@ -11,17 +11,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Modelo.Usuario;
-import Control.AccionesInv;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.http.HttpSession;
+import Control.AccionesAdmin;
+import Modelo.Producto;
 
 /**
  *
  * @author Emiliano
  */
-public class iniciarSesion extends HttpServlet {
+public class actProductoRP extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,40 +30,25 @@ public class iniciarSesion extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, ClassNotFoundException {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
-            String usu,pass;
-            
-            usu = request.getParameter("usu");
-            pass = request.getParameter("pass");
-            
-            Usuario objUsu = new Usuario();
-            
-            if(usu.equals("adminBenJerry")&&pass.equals("BaJs3159")){
+            try{
+                int id = Integer.parseInt(request.getParameter("select"));
                 
-                objUsu.setUsu(usu);
-                objUsu.setPass(pass);
-                HttpSession sesionusu = request.getSession(true);
-                sesionusu.setAttribute("usuario", objUsu);
-                response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
-                
-            }else{
-                AccionesInv acc = new AccionesInv();
-                objUsu = acc.verificarUsuario(usu,pass);
+                AccionesAdmin acc = new AccionesAdmin();
 
+                Producto objPro = acc.recogerProducto(id);
 
-                if(objUsu!=null){
-                    HttpSession sesionusu = request.getSession(true);
-                    sesionusu.setAttribute("usuario", objUsu);
-                    response.sendRedirect("gestionarUsu.html");
+                if(objPro!=null){
+                    response.sendRedirect("actProducto.jsp?idP="+id);
 
                 }else{
-                    //el usuario no esta registrado
-                    response.sendRedirect("inicioSesion.html");
+                    response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
                 }
+            }catch(Exception e){
+                response.sendRedirect("adminProductos.jsp?busc=false&filt=false");
             }
         }
     }
@@ -83,11 +65,7 @@ public class iniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -101,11 +79,7 @@ public class iniciarSesion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(iniciarSesion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

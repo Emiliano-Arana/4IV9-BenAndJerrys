@@ -9,6 +9,11 @@ package Modelo;
  *
  * @author Emiliano
  */
+
+import java.util.Vector;
+import Control.Conexion;
+import java.sql.*;
+
 public class Usuario {
     private int id_usu,id_tarjeta,id_dir;
     private String nom,appat,apmat,FN,usu,pass;
@@ -107,5 +112,41 @@ public class Usuario {
         this.pass = pass;
     }
     
-    
+    public Vector<Usuario> listaUsu() throws ClassNotFoundException{
+        Vector<Usuario> listaUsu = new Vector<Usuario>();
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try{
+            con = Conexion.getConection();
+            String q = "select * from musuario";
+            //querry donde se obtenga a traves de join o con vista
+            ps = con.prepareStatement(q);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                Usuario usu = new Usuario();
+                usu.setId_usu(rs.getInt("id_usuario"));
+                usu.setUsu(rs.getString("user_usuario"));
+                usu.setPass(rs.getString("pass_usuario"));
+                listaUsu.add(usu);
+            }
+            
+        }catch(SQLException sq){
+            System.out.println("Error al consultar los productos");
+            System.out.println(sq.getMessage());
+            listaUsu = null;
+        
+        }finally{
+            try{
+                rs.close();
+                ps.close();
+                con.close();
+            
+            }catch(Exception e){
+                System.out.println("Error no encuentra la clase");
+                System.out.println(e.getMessage());
+            }
+        }
+        return listaUsu;
+    }
 }
