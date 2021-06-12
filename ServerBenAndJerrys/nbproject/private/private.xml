@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarProducto.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/productos.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/AccionesUsu.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/inicioSesion.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/ProductoTabla.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/conocenos.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/TipoHelado.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarUsuAdmin.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/css/styleProducto.css</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarUsuAdmin.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actSaborRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cSabores.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/productos.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/buscarIDproducto.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/agregarProducto.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/actProducto.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/index.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cPromociones.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/adminUsu.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/css/styleNavFoot.css</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Producto.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/gestionarUsu.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarPresentacion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/registro.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/adminProductos.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarSabor.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Usuario.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarPromocion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Control/AccionesAdmin.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/actualizarUsu.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/js/validacionPro.js</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/agregarProducto.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Modelo/Cantidad.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarSabor.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/buscarIDusu.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/consultaVentas.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actUsuRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/filtProductos.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actPromocionRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/iniciarSesion.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actualizarSabor.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/actProductoRP.java</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/menuCatalogos.html</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/web/cCantidades.jsp</file>
+            <file>file:/C:/Users/Emiliano/Documents/Escuela/4toSemestre/PSW/ServerBenAndJerrys/src/java/Vista/eliminarProducto.java</file>
+        </group>
+    </open-files>
+</project-private>

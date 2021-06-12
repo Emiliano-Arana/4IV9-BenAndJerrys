@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <link rel="stylesheet" href="./css/styleAdminTable.css">
+    <title>Sabores</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <nav class="nav">
+              <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
+              <a href="menuCatalogos.html" class="return">Regresar</a>
+            </nav>
+        </header>
+        <div class="tablaConsulta">
+            <div class="miniAdd">
+                <form name="formAdd">
+                    <label class="labRC">Sabor:</label>
+                    <input type="text" id="cSabor" name="sabor" class="txtRC" onkeypress="return validarNom(event)">
+                    <input type="submit" onclick="return validarDatos()" value="Agregar" class="addRC">
+                </form>
+            </div>
+            <form class="form-tabla" name="tablaP">
+                <div class="acciones">
+                    <label for="edit"><i class="fas fa-edit icon"></i></label>
+                    <input type="submit" value="Edit" class="boton-accion" id="edit">
+                    <label for="delete"><i class="fas fa-trash-alt icon"></i></label>
+                    <input type="submit" value="Add" class="boton-accion" id="delete">
+                </div>
+                <table class="tabla">
+                    <thead class="titulosCol">
+                        <tr>
+                            <td id="seleccion"></td>
+                            <td>ID</td>
+                            <td>Sabor</td>
+                        </tr>
+                    </thead>
+                    <tbody class="registros">
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                        </tr>
+                        <tr>
+                            <td><input type="radio" name="producto" value="" class="radio-button"></td>
+                            <td>1</td>
+                            <td>Chocolate</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script src="./js/validacionCSab.js"></script>
+</body>
+</html>

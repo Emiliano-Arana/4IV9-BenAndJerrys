@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleForm.css">
+    <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Registrar</title>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <nav class="nav">
+              <a href="index.html" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
+              <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="nav-menu">
+                <li id="tre" class="btn btn--4">
+                  <a href="./conocenos.html" class="nav-menu-link">Conocenos</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                  <a href="productos.html" class="nav-menu-link">Productos</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                  <a href="#" class="nav-menu-link">Carrito</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                    <a href="inicioSesion.html" class="nav-menu-link">Acceder</a>
+                  </li>
+              </ul>
+            </nav>
+        </header>
+        <div class="body-container">
+            <form class="formularioCam">
+                <p class="title">Registro</p>
+                <p class="subtitle">Datos Personales</p>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cname">Nombre</label>
+                    <br>
+                    <label class="error" id="errNom"></label>
+                    <div class="campo">
+                        <i class="fas fa-user icon"></i><input type="text" id="Cname" name="nombreUsu" onkeypress="return validarNom(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cappat">Apellido Paterno</label>
+                    <br>
+                    <label class="error" id="errAppat"></label>
+                    <div class="campo">
+                        <i class="fas fa-user icon"></i><input type="text" id="Cappat" name="appatUsu" onkeypress="return validarNom(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Capmat">Apellido Materno</label>
+                    <br>
+                    <label class="error" id="errApmat"></label>
+                    <div class="campo">
+                        <i class="fas fa-user icon"></i><input type="text" id="Capmat" name="apmatUsu" onkeypress="return validarNom(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cfn">Fecha de Nacimiento</label>
+                    <br>
+                    <label class="error" id="errFN"></label>
+                    <div class="campo">
+                        <i class="fas fa-calendar-day icon"></i><input type="date" id="Cfn" name="fnUsu" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Ctel">Telefono</label>
+                    <br>
+                    <label class="error" id="errTel"></label>
+                    <div class="campo">
+                        <i class="fas fa-phone icon"></i><input type="text" id="Ctel" name="telUsu" onkeypress="return validarNum(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Ccel">Celular</label>
+                    <br>
+                    <label class="error" id="errCel"></label>
+                    <div class="campo">
+                        <i class="fas fa-mobile-alt icon"></i><input type="text" id="Ccel" name="celUsu" onkeypress="return validarNum(event)" class="text-campo">
+                    </div>
+                </div>
+                <p class="subtitle">Datos Usuario</p>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cusu">Usuario</label>
+                    <br>
+                    <label class="error" id="errUsu"></label>
+                    <div class="campo">
+                        <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" onkeypress="return validarUsu(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cpass">Contraseña</label>
+                    <br>
+                    <label class="error" id="errPass"></label>
+                    <div class="campo">
+                        <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" onkeypress="return validarPass(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cpass2">Confirmar Contraseña</label>
+                    <br>
+                    <label class="error" id="errPass2"></label>
+                    <div class="campo">
+                        <i class="fas fa-lock icon"></i><input type="password" id="Cpass2" name="pass2" onkeypress="return validarPass(event)" class="text-campo">
+                    </div>
+                </div>
+                <div class="container-campo">
+                    <p class="extraLink">¿Ya tienes cuenta? <a class="linkE" href="inicioSesion.html">Inicia Sesion</a></p>
+                    <input type="submit" class="subir" onclick="return validarDatos()" value="Registrarse">
+                </div>
+            </form>
+        </div>
+        <footer>
+            <h1 id=con>Contactanos</h1>
+            <div class=formulario>
+                <form action="" >
+                    <p id=dis>Formulario de contacto</p>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <textarea name="mensaje" placeholder="Escriba su mensaje" cols="30" rows="10" required></textarea>
+                    <input type="submit" value="Enviar" id="boton">
+                </form>
+            </div>
+            <div class="redes-sociales">
+                <ul>
+                    <li><a href="https://es-la.facebook.com/benandjerrys/"><p id=facebook><i class="fab fa-facebook-square fa-3x"></i></p></a></li>
+                    <li><a href="https://www.instagram.com/benandjerrys/?hl=es"><p id="instagram"><i class="fab fa-instagram-square  fa-3x"></i></p></a></li>
+                    <li><p id="correo"><i class="fas fa-envelope fa-3x"></i></p></li>
+                    <li><a href="https://twitter.com/benandjerrys"><p id="twitter"><i class="fab fa-twitter-square fa-3x" ></i></p></a></li>
+                </ul>
+            </div>
+            <div class=nombres>
+                <p id="nom">Hecho por</p>
+                <br>
+                <p id="nom">Arana Chavez Emiliano</p>
+                <br>
+                <p id="nom">Lizarraga Anguiano Jesus Adrian</p>
+                <br>
+                <p id="nom">Núñez Manrique Cuauhtemoc Emmanuel</p>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/validacionR.js"></script>
+</body>
+</html>

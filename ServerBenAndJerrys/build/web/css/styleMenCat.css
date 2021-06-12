@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body{
+    background-image: url(https://static.vecteezy.com/system/resources/previews/000/333/037/non_2x/hand-drawn-ice-cream-seamless-pattern-vector.jpg);
+}
+
+.body-container{
+    padding-top: 100px;
+    
+    justify-content: center;
+}
+
+.img{
+    width: 80%;
+    max-width: 512px;
+}
+
+.contIMG{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.links-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.linkCat{
+    padding: 1rem 1.2rem;
+    margin: 1.5rem;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    background-color: rgb(126, 92, 49);
+}
+
+.linkCat a{
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.linkCat a:hover{
+    color: rgb(236, 210, 176);
+}

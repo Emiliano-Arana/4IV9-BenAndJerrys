@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ben and Jerrys</title>
-    <link rel="stylesheet" href="./css/StyleIndex.css">
+    <script src="https://kit.fontawesome.com/341b72a6e8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <link rel="stylesheet" href="./css/styleForm.css">
     <link rel="stylesheet" href="./css/estilos.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a78d4ea77b.js" crossorigin="anonymous"></script>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
     <div class="main-container">
         <header class="header">
             <nav class="nav">
-              <a href="#" class="logo nav-link"><img src="../4IV9-BenAndJerrys/img/logo-small.png" ></a>
+              <a href="index.html" class="logo nav-link"><img src="./img/logo-small.png" ></a>
               <button class="nav-toggle" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
               </button>
@@ -25,38 +25,38 @@
                   <a href="./conocenos.html" class="nav-menu-link">Conocenos</a>
                 </li>
                 <li id="tre" class="btn btn--4">
-                  <a href="productos.html" class="nav-menu-link">Productos</a>
+                  <a href="productos.jsp?filt=false" class="nav-menu-link">Productos</a>
                 </li>
                 <li id="tre" class="btn btn--4">
-                  <a href="#" class="nav-menu-link">Carrito</a>
-                </li>
-                <li id="tre" class="btn btn--4">
-                    <a href="registro.html" class="nav-menu-link">Acceder</a>
+                    <a href="#" class="nav-menu-link">Acceder</a>
                   </li>
               </ul>
             </nav>
         </header>
         <div class="body-container">
-            <h1 id=hip>Ben and Jerry's</h1>
-            <div class="container">
-                <img src="./img/prueba.jpg" id="otro">
-            </div>
-            <div class="inform">
-                <div>
-                    <p id=burn>Descubre una sabor que mueva tus sentidos</p>
-                    <p>Contamos con gran variedad de sabores que te haran tener una experiencia unica en tu boca</p>
-                    <p id=dis>¡¡¡DISFRUTALOS!!!</p>
+            <form class="formularioCam" action="iniciarSesion" method="POST">
+                <p class="title">Inicio Sesion</p>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cusu">Usuario</label>
+                    <br>
+                    <label class="error" id="errUsu"></label>
+                    <div class="campo">
+                        <i class="fas fa-user icon"></i><input type="text" id="Cusu" name="usu" onkeypress="return validarUsu(event)" class="text-campo">
+                    </div>
                 </div>
-                <img src="./img/sensa.jpg" class="img-body">
-            </div>
-            <div class="inform">
-                <img src="./img/INGR.jpg" class="img-body">
-                <div>
-                    <p id=burn>Ingredientes conscientes</p>
-                    <p>¡Nuestros ingredientes promueven un cambio positivo y eso hace que nuestro helado tenga un sabor</p>
-                    <p id=dis>¡¡¡sensacional!!!</p>
+                <div class="container-campo">
+                    <label class="nombre-campo" for="Cpass">Contraseña</label>
+                    <br>
+                    <label class="error" id="errPass"></label>
+                    <div class="campo">
+                        <i class="fas fa-lock icon"></i><input type="password" id="Cpass" name="pass" onkeypress="return validarPass(event)" class="text-campo">
+                    </div>
                 </div>
-            </div>
+                <div class="container-campo">
+                    <p class="extraLink">¿No tienes cuenta? <a class="linkE" href="registro.html">Registrate</a></p>
+                    <input type="submit" class="subir" value="Iniciar Sesion" onclick="return validarDatos()">
+                </div>
+            </form>
         </div>
         <footer>
             <h1 id=con>Contactanos</h1>
@@ -88,7 +88,8 @@
                 <p id="nom">Núñez Manrique Cuauhtemoc Emmanuel</p>
             </div>
         </footer>
-        <script src="./js/main.js"></script>
     </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/validacionIS.js"></script>
 </body>
 </html>
