@@ -56,9 +56,6 @@ public class VerificarUsuario extends HttpServlet {
                 if(u.getPrivilegio_usuario() == 0){
                     //cliente
                     response.sendRedirect("MostrarHelados.jsp");
-                }else{
-                    //admin
-                    response.sendRedirect("MostrarAdministrador.jsp");
                 }
             }else{
                 //el usuario no esta registrado

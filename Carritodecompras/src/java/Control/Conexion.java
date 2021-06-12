@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package Control;
+
 import java.sql.*;
+
 public class Conexion {
     
     public static Connection getConexion() throws ClassNotFoundException{
