@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben and Jerrys</title>
+    <link rel="stylesheet" href="./css/StyleIndex.css">
+    <link rel="stylesheet" href="./css/styleNavFoot.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a78d4ea77b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="main-container">
+        <header class="header">
+            <nav class="nav">
+              <a href="#" class="logo nav-link"><img src="./img/logo-small.png" ></a>
+              <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="nav-menu">
+                <li id="tre" class="btn btn--4">
+                  <a href="./conocenos.html" class="nav-menu-link">Conocenos</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                  <a href="productos.jsp?filt=false" class="nav-menu-link">Productos</a>
+                </li>
+                <li id="tre" class="btn btn--4">
+                    <a href="inicioSesion.html" class="nav-menu-link">Acceder</a>
+                  </li>
+              </ul>
+            </nav>
+        </header>
+        <div class="body-container">
+            <h1 id=hip>Ben and Jerry's</h1>
+            <div class="container">
+                <img src="./img/prueba.jpg" id="otro">
+            </div>
+            <div class="inform">
+                <div>
+                    <p id=burn>Descubre una sabor que mueva tus sentidos</p>
+                    <p>Contamos con gran variedad de sabores que te haran tener una experiencia unica en tu boca</p>
+                    <p id=dis>¡¡¡DISFRUTALOS!!!</p>
+                </div>
+                <img src="./img/sensa.jpg" class="img-body">
+            </div>
+            <div class="inform">
+                <img src="./img/INGR.jpg" class="img-body">
+                <div>
+                    <p id=burn>Ingredientes conscientes</p>
+                    <p>¡Nuestros ingredientes promueven un cambio positivo y eso hace que nuestro helado tenga un sabor</p>
+                    <p id=dis>¡¡¡sensacional!!!</p>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <h1 id=con>Contactanos</h1>
+            <div class=formulario>
+                <form action="" >
+                    <p id=dis>Formulario de contacto</p>
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                    <input type="email" name="correo" placeholder="Correo" required>
+                    <textarea name="mensaje" placeholder="Escriba su mensaje" cols="30" rows="10" required></textarea>
+                    <input type="submit" value="Enviar" id="boton">
+                </form>
+            </div>
+            <div class="redes-sociales">
+                <ul>
+                    <li><a href="https://es-la.facebook.com/benandjerrys/"><p id=facebook><i class="fab fa-facebook-square fa-3x"></i></p></a></li>
+                    <li><a href="https://www.instagram.com/benandjerrys/?hl=es"><p id="instagram"><i class="fab fa-instagram-square  fa-3x"></i></p></a></li>
+                    <li><p id="correo"><i class="fas fa-envelope fa-3x"></i></p></li>
+                    <li><a href="https://twitter.com/benandjerrys"><p id="twitter"><i class="fab fa-twitter-square fa-3x" ></i></p></a></li>
+                </ul>
+            </div>
+            <div class=nombres>
+                <p id="nom">Hecho por</p>
+                <br>
+                <p id="nom">Arana Chavez Emiliano</p>
+                <br>
+                <p id="nom">Lizarraga Anguiano Jesus Adrian</p>
+                <br>
+                <p id="nom">Núñez Manrique Cuauhtemoc Emmanuel</p>
+            </div>
+        </footer>
+        <script src="./js/main.js"></script>
+    </div>
+</body>
+</html>
